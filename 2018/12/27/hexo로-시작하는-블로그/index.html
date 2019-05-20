@@ -170,9 +170,9 @@
 </section>
     <!-- Tags START -->
     
-      <div class="tags">
-        <span>Tags:</span>
-        
+    <div class="tags">
+      <span>Tags:</span>
+      
   <a href="/tags#hexo">
     <span class="tag-code">hexo</span>
   </a>
@@ -181,7 +181,7 @@
     <span class="tag-code">blog</span>
   </a>
 
-      </div>
+    </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -189,105 +189,107 @@
     <!-- NAV END -->
 
     
-      <!-- Gitment START -->
-      <div id="comments"></div>
-      <!-- Gitment END -->
+    <!-- Gitment START -->
+    <div id="comments"></div>
+    <!-- Gitment END -->
     
   </article>
   <!-- Article END -->
   <!-- Catalog START -->
-  
-    <aside class="catalog-container">
+   <aside class="catalog-container">
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
       <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#HEXO와-Github-page를-활용한-블로그"><span class="toc-nav-text">HEXO와 Github page를 활용한 블로그</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#개요"><span class="toc-nav-text">개요</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#시작"><span class="toc-nav-text">시작</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-git-레퍼지토리-생성"><span class="toc-nav-text">1. git 레퍼지토리 생성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-Hexo-설치"><span class="toc-nav-text">2. Hexo 설치</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-hexo-블로그-생성"><span class="toc-nav-text">3. hexo 블로그 생성</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-Hexo-블로그를-Github에-연동"><span class="toc-nav-text">4. Hexo 블로그를 Github에 연동</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-블로그-테마-설정"><span class="toc-nav-text">5. 블로그 테마 설정</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-글-작성-포스트-생성"><span class="toc-nav-text">6. 글 작성(포스트 생성)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-로컬-확인"><span class="toc-nav-text">7. 로컬 확인</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#8-Hexo-빌드-후-Github에-업로드"><span class="toc-nav-text">8. Hexo 빌드 후 Github에 업로드</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#결론"><span class="toc-nav-text">결론</span></a></li></ol></li></ol>
     
   </div>
-</aside>
-  
+</aside> 
   <!-- Catalog END -->
 </main>
 
 <script>
-  (function () {
-    var url = 'http://snowjang24.github.io/2018/12/27/hexo로-시작하는-블로그/';
-    var banner = ''
-    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
+  (function() {
+    var url = "http://snowjang24.github.io/2018/12/27/hexo로-시작하는-블로그/";
+    var banner = "";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")"
+      });
     } else {
-      $('#article-banner').geopattern(url)
+      $("#article-banner").geopattern(url);
     }
-    $('.header').removeClass('fixed-header')
+    $(".header").removeClass("fixed-header");
 
-     // error image
-    $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+    // error image
+    $(".markdown-content img").on("error", function() {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
       $(this).css({
-        'cursor': 'default'
-      })
-    })
+        cursor: "default"
+      });
+    });
 
     // zoom image
-    $(".markdown-content img").on('click', function() {
-      var src = $(this).attr('src')
-      if (src !== 'http://file.muyutech.com/error-img.png') {
-        var imageW = $(this).width()
-        var imageH = $(this).height()
-        
-        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-        zoom = zoom < 1 ? 1 : zoom
-        zoom = zoom > 2 ? 2 : zoom
-        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+    $(".markdown-content img").on("click", function() {
+      var src = $(this).attr("src");
+      if (src !== "http://file.muyutech.com/error-img.png") {
+        var imageW = $(this).width();
+        var imageH = $(this).height();
 
-        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-        $('.image-view-wrap').addClass('wrap-active')
-        $('.image-view-wrap img').css({
-          'width': `${imageW}`,
-          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-        })
-        $('html').css('overflow', 'hidden')
+        var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+        zoom = zoom < 1 ? 1 : zoom;
+        zoom = zoom > 2 ? 2 : zoom;
+        var transY = (($(window).height() - imageH) / 2).toFixed(2);
 
-        $('.image-view-wrap').on('click', function() {
-          $(this).remove()
-          $('html').attr('style', '')
-        })
+        $("body").append(
+          '<div class="image-view-wrap"><div class="image-view-inner"><img src="' +
+            src +
+            '" /></div></div>'
+        );
+        $(".image-view-wrap").addClass("wrap-active");
+        $(".image-view-wrap img").css({
+          width: `${imageW}`,
+          transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        });
+        $("html").css("overflow", "hidden");
+
+        $(".image-view-wrap").on("click", function() {
+          $(this).remove();
+          $("html").attr("style", "");
+        });
       }
-    })
+    });
 
     // qrcode
     var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
+      element: document.getElementById("share-qrcode"),
       value: document.location.href
     });
 
     // gitment
-    var gitmentConfig = "yanm1ng";
-    if (gitmentConfig !== 'undefined') {
+    var gitmentConfig = "snowjang24";
+    if (gitmentConfig !== "undefined") {
       var gitment = new Gitment({
         id: "HEXO와 Github page로 시작하는 블로그",
-        owner: "yanm1ng",
-        repo: "yanm1ng.github.io",
+        owner: "snowjang24",
+        repo: "snowjang24.github.io",
         oauth: {
           client_id: "0f87e490e00ee3fd87ef",
           client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
         },
         theme: {
           render(state, instance) {
-            const container = document.createElement('div')
-            container.lang = "en-US"
-            container.className = 'gitment-container gitment-root-container'
-            container.appendChild(instance.renderHeader(state, instance))
-            container.appendChild(instance.renderEditor(state, instance))
-            container.appendChild(instance.renderComments(state, instance))
-            container.appendChild(instance.renderFooter(state, instance))
+            const container = document.createElement("div");
+            container.lang = "en-US";
+            container.className = "gitment-container gitment-root-container";
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
             return container;
           }
         }
-      })
-      gitment.render(document.getElementById('comments'))
+      });
+      gitment.render(document.getElementById("comments"));
     }
   })();
 </script>
