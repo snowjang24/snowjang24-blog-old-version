@@ -138,63 +138,30 @@
   </div>
   <h3>snowjang24</h3>
   
-    <p class="description">Snowjang24 Blog</p>
+  <p class="description">Snowjang24 Blog</p>
   
   <section class="share-icons">
-    
-      <a class="icon-weibo" href="http://weibo.com/yanm1ng" target="_blank" rel="external nofollow noopener noreferrer">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    
-    
-      <a class="icon-twitter" href="https://twitter.com/yanm1ng" target="_blank" rel="external nofollow noopener noreferrer">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    
-    
-      <a class="icon-github" href="https://github.com/yanm1ng" target="_blank" rel="external nofollow noopener noreferrer">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    
-    
-    
-      <a class="icon-zhihu" href="https://www.zhihu.com/people/yummy1121" target="_blank" rel="external nofollow noopener noreferrer">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-stack-1x fa-inverse">知</i>
-        </span>
-      </a>
-    
-    
-        <a class="icon-douban" href="https://www.douban.com/people/yanm1ng" target="_blank" rel="external nofollow noopener noreferrer">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-stack-1x fa-inverse">豆</i>
-            </span>
-        </a>
-    
+      
+    <a class="icon-github" href="https://github.com/snowjang24" target="_blank" rel="external nofollow noopener noreferrer">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+       
   </section>
 </div>
 
 <script>
-  (function () {
-    $('.header').removeClass('fixed-header')
+  (function() {
+    $(".header").removeClass("fixed-header");
     var windowH = $(window).height();
-    var author = $('.author')
+    var author = $(".author");
     var bodyH = author.offset().top + author[0].offsetHeight + 71;
     if (bodyH < windowH) {
       author.css({
-        'margin-bottom': windowH - bodyH
-      })
+        "margin-bottom": windowH - bodyH
+      });
     }
   })();
 </script>
