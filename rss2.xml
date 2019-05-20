@@ -7,7 +7,7 @@
     <link>http://snowjang24.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
-    <description>Development blog</description>
+    <description>프론트 앤드 개발 기록 블로그(리액트)</description>
     <pubDate>Mon, 18 Feb 2019 10:15:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
