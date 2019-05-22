@@ -130,6 +130,7 @@ h2.article-head {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #253748;
 }
 @media screen and (max-width: 480px) {
   #article-banner {
