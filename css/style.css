@@ -540,17 +540,20 @@ h2.article-head {
 .markdown-content h1,
 .article-summary h1 {
   font-size: 2em;
+  font-weight: bold;
   border-bottom: 1px solid #e5e5e5;
 }
 .markdown-content h2,
 .article-summary h2 {
   font-size: 1.5em;
+  font-weight: bold;
   border-bottom: 1px solid #e5e5e5;
 }
 .markdown-content h3,
 .article-summary h3 {
   margin: 0.3em 0;
   font-size: 1.3em;
+  font-weight: bold;
   padding-bottom: 0.3em;
 }
 .markdown-content h3:before,
@@ -564,11 +567,13 @@ h2.article-head {
 .markdown-content h4,
 .article-summary h4 {
   margin: 1em 0;
+  font-weight: bold;
   font-size: 1.2em;
 }
 .markdown-content h5,
 .article-summary h5 {
   font-size: 1em;
+  font-weight: bold;
   margin: 0.8em 0;
 }
 .markdown-content blockquote,
