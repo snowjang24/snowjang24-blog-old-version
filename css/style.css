@@ -370,7 +370,7 @@ h2.article-head {
   display: flex;
   align-items: center;
   float: left;
-  font-weight: 500;
+  font-weight: bold;
   color: #fff;
   font-size: 1.5em;
   line-height: 40px;
