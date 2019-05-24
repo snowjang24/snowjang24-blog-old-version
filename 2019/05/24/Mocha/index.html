@@ -167,10 +167,27 @@
 <p>종합해보면, Unit test는 TDD에서 테스트하는 방법 중에 하나다. 물론 TDD에서만 쓰는 것이 아닌, 일반적인 개발 프로세스에도 사용된다.</p>
 <p>이러한 유닛 테스트를 위한 라이브러리로는 Mocha, Jasmine, Jest 등 다양한 것이 있지만, 이번에 TDD를 공부할 때는 Mocha를 이용하여 테스트하려 한다.</p>
 <p><br></p>
-<h2 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h2><h3 id="Mocha란"><a href="#Mocha란" class="headerlink" title="Mocha란?"></a>Mocha란?</h3><p>Mocha는 Node.js와 브라우저에서 돌아가는 javascript 테스트 프레임 워크이다.</p>
+<h2 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h2><h3 id="Mocha란"><a href="#Mocha란" class="headerlink" title="Mocha란?"></a>Mocha란?</h3><p><strong>Mocha</strong>는 Node.js와 브라우저에서 돌아가는 javascript 테스트 프레임 워크다.</p>
 <p><img src="58480ffbcef1014c0b5e4947.png" width="25%"></p>
 <p><br></p>
-<h2 id="Chai"><a href="#Chai" class="headerlink" title="Chai"></a>Chai</h2></section>
+<h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><p>Mocha를 사용하기 위해서는 npm을 통해 설치해야 한다. 여기에 추가로 <code>test</code>라는 폴더를 만들어 안에 테스트 코드를 생성한다.</p>
+<p>테스트 코드는 모두 <code>test</code> 폴더에 넣어 둔다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install mocha</span><br><span class="line">mkdir <span class="built_in">test</span></span><br><span class="line">touch <span class="built_in">test</span>/test.js</span><br></pre></td></tr></table></figure>
+<p>이제 에디터에서 <code>test.js</code>에 다음과 같이 코드를 작성 한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line">describe(<span class="string">'Array'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  describe(<span class="string">'#indexOf()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    it(<span class="string">'should return -1 when the value is not present'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      assert.equal([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].indexOf(<span class="number">4</span>), <span class="number">-1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>… 추후 추가 예정</strong></p>
+<p><br></p>
+<hr>
+<blockquote>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://softwareengineering.stackexchange.com/questions/59928/difference-between-unit-testing-and-test-driven-development" rel="external nofollow noopener noreferrer" target="_blank">Difference between unit test and tdd</a></li>
+<li><a href="https://nodejs.org/api/assert.html" rel="external nofollow noopener noreferrer" target="_blank">Node.js Assert</a></li>
+<li><a href="https://heropy.blog/2018/03/16/mocha/" rel="external nofollow noopener noreferrer" target="_blank">Node.js 테스트 프레임워크 Mocha</a></li>
+<li><a href="https://mochajs.org/" rel="external nofollow noopener noreferrer" target="_blank">Mocha.js</a></li>
+<li><a href="https://www.chaijs.com/" rel="external nofollow noopener noreferrer" target="_blank">Chai.js</a></li>
+</ul>
+</blockquote>
+</section>
     <!-- Tags START -->
     
     <div class="tags">
@@ -224,7 +241,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Javascript-TDD를-위한-Mocha와-Chai"><span class="toc-nav-text">Javascript TDD를 위한 Mocha와 Chai</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Unit-Test-Tool"><span class="toc-nav-text">Unit Test Tool</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Unit-Test-TDD"><span class="toc-nav-text">Unit Test? TDD?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Mocha"><span class="toc-nav-text">Mocha</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mocha란"><span class="toc-nav-text">Mocha란?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Chai"><span class="toc-nav-text">Chai</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Javascript-TDD를-위한-Mocha와-Chai"><span class="toc-nav-text">Javascript TDD를 위한 Mocha와 Chai</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Unit-Test-Tool"><span class="toc-nav-text">Unit Test Tool</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Unit-Test-TDD"><span class="toc-nav-text">Unit Test? TDD?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Mocha"><span class="toc-nav-text">Mocha</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mocha란"><span class="toc-nav-text">Mocha란?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#사용법"><span class="toc-nav-text">사용법</span></a></li></ol></li></ol></li></ol>
     
   </div>
 </aside> 
