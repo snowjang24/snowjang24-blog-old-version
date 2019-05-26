@@ -152,24 +152,45 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="CSS-방법론-BEM에-대하여"><a href="#CSS-방법론-BEM에-대하여" class="headerlink" title="CSS 방법론 - BEM에 대하여"></a>CSS 방법론 - BEM에 대하여</h1><h2 id="BEM-소개"><a href="#BEM-소개" class="headerlink" title="BEM 소개"></a>BEM 소개</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트앤드 개발 로드맵</a>을 보면 CSS아키텍쳐로 <a href="https://en.bem.info/" rel="external nofollow noopener noreferrer" target="_blank">BEM</a>을 추천하고 있다(여기서 추천하는 기술은 많이 쓰이고 있는 기술들이라, 한 번 전체적으로 공부해보는 것이 좋을 것 같다).</p>
+    <section class="markdown-content"><h1 id="CSS-방법론-BEM에-대하여"><a href="#CSS-방법론-BEM에-대하여" class="headerlink" title="CSS 방법론, BEM에 대하여"></a>CSS 방법론, BEM에 대하여</h1><h2 id="BEM-소개"><a href="#BEM-소개" class="headerlink" title="BEM 소개"></a>BEM 소개</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트앤드 개발 로드맵</a>을 보면 CSS 아키텍쳐로 <a href="https://en.bem.info/" rel="external nofollow noopener noreferrer" target="_blank">BEM</a>을 추천하고 있다(여기서 추천하는 기술은 많이 쓰이고 있는 기술들이라, 전체적으로 한 번 공부해보는 것이 좋을 것 같다).</p>
 <p><img src="image-20190526130928185-8843768.png" width="80%"></p>
-<p>2017년에는 추천하는 기술에 포함되지 않았던 BEM은 2018년에 들어 추천하는 기술에 올랐고, 2019년에는 여전히 추천하는 기술에 포함돼있지만 <a href="[https://medium.com/@okys2010/%EB%AA%A8%EB%8D%98-css-1-css-in-js-c1c53d9bbbc9](https://medium.com/@okys2010/모던-css-1-css-in-js-c1c53d9bbbc9">CSS in JS</a>)의 등장으로 금방 자리를 내어줄 것 같다.</p>
+<p>2017년에는 추천하는 기술에 포함되지 않았던 BEM은 2018년에 들어 추천하는 기술에 올랐고, 2019년에는 여전히 추천하는 기술에 포함돼있지만 <a href="https://medium.com/@okys2010/모던-css-1-css-in-js-c1c53d9bbbc9" rel="external nofollow noopener noreferrer" target="_blank">CSS in JS</a>의 등장으로 금방 자리를 내어줄 것 같다.</p>
 <blockquote>
-<p>CSS in JS는 React같은 Front-End Framework에 최적화되어 있다. </p>
-<p>이런 프레임워크의 사용이 주를 이루는 요즘, 금방 BEM을 사용하지 않게 될 것 같다는 생각이 들었다. </p>
-<p>추후에 CSS in JS에 관해서도 공부해봐야겠다.</p>
+<p>CSS in JS는 React같은 Front-End Framework에 최적화되어 있다.<br>프레임워크의 사용이 주를 이루는 요즘, 금방 BEM이 대체되지 않을까라는 생각이 들었다.<br>CSS의 변천사에 관해서는 <a href="https://medium.com/@perezpriego7/css-evolution-from-css-sass-bem-css-modules-to-styled-components-d4c1da3a659b" rel="external nofollow noopener noreferrer" target="_blank">이 글</a>을 한 번 읽어보면 좋을 것 같다.</p>
 </blockquote>
-<p>하지만 위의 사진에도 있듯이 이런 방법론이 있다는 것에 의미를 두고 간단히 정리를 해보려 한다.</p>
+<p>하지만 위의 사진에도 적혀 있듯이 이런 방법론이 있다는 것에 의미를 두고 간단히 정리해보려 한다.</p>
 <p><br></p>
-<h3 id="BEM-이란"><a href="#BEM-이란" class="headerlink" title="BEM 이란?"></a>BEM 이란?</h3><p>BEM은 Block, Element, Modifier의 약자로 컴포넌트 기반의 웹 개발 </p>
+<h3 id="빌어먹을-CSS"><a href="#빌어먹을-CSS" class="headerlink" title="빌어먹을 CSS"></a>빌어먹을 CSS</h3><p>처음 CSS로 프로젝트를 진행할 때, 가장 어려웠던 점은 <code>flex</code>도 <code>position</code>도 아닌 <code>id</code>와 <code>class</code>의 작명이었다. 프로젝트를 하다 보면 한두 개였던 요소가 어느새 한눈에 담기지 않게 되고 내가 썼던 클래스 이름을 잊기 부지기수였다.</p>
+<p>인터넷에서 어떤 규칙을 갖고 작성하는 게 좋다는 가이드라인을 찾는 것조차, 개발 공부 초짜였던 나에게는 너무나 어려운 일이었다. 그렇다고 주먹구구식으로 개발하기에는 항상 같은 문제에 부딪혔고, 조금만 규모가 커질 때마다 곤란해하다가 모든 것을 놓아버리는 방치형 개발을 주로하게 되었다.</p>
+<p><img src="image-20190526160120034-8854080.png" width="90%"></p>
+<p>나중에 CSS 방법론에 대해 알게 되었고, 그 중 BEM을 추천한다라는 것까지 알게 되었다. 그 생각까지가 BEM에 대한 마지막 기억이다.</p>
+<p><br></p>
+<h3 id="CSS-방법론"><a href="#CSS-방법론" class="headerlink" title="CSS 방법론"></a>CSS 방법론</h3><p><strong>CSS 방법론</strong>(CSS Methodology)은 모듈화, 재사용 가능성과 확장 가능성 등을 고려하여 <strong>CSS를 잘 작성하기 위한 지침</strong>이다. 쉽게 말해, 개발자가 코드를 잘 작성하고 유지∙보수하기 쉽게 만들기 위한 CSS 작성 규칙이다. 프레임워크나 라이브러리 같은 것이 아니다.</p>
+<p>CSS 방법론에는 OOCSS, BEM SMACSS등이 있는데, 그 중 가장 많이 쓰고 유명한 BEM에 대해서만 다루려 한다.</p>
+<p><br></p>
+<h3 id="BEM-이란"><a href="#BEM-이란" class="headerlink" title="BEM 이란?"></a>BEM 이란?</h3><p><strong>BEM</strong>은 <strong>Block__Element–Modifier</strong>의 약자로, 웹 UI를 블럭 단위로 컴포넌트화하여 개발하는 개발 방식이다. </p>
+<blockquote>
+<p><strong>컴포넌트</strong>(Component)란? 독립적이고 완결된 뷰를 생성하기 위하여 HTML, CSS, 자바스크립트를 하나의 단위로 묶는 것을 의미한다. 쉽게 말해, 웹을 구성하는 동작 가능한 하나의 부품이다.</p>
+</blockquote>
+<p><img src="image-20190526163009708-8855809.png" width="90%"></p>
+<p>먼저, BEM은 <code>class</code>작명 규칙을 기본으로 한다. BEM에 따라 <code>class</code>를 작명할 때, 이름만 봐도 어떤 기능을 하는지 알 수 있도록 이름을 명확하게 짓는다. 작명 규칙 뿐만 아니라 파일 구조에 관한 규칙 또한 존재한다. 이러한 규칙들을 통해 개발 및 유지∙보수가 쉬운 코드를 작성하는 것을 목표로 한다.</p>
+<p>BEM의 핵심 개념은 다음과 같다.</p>
+<ul>
+<li>Block</li>
+<li>Element</li>
+<li>Modifier</li>
+<li>File structure</li>
+</ul>
+<p><br></p>
 <h2 id="BEM-사용법"><a href="#BEM-사용법" class="headerlink" title="BEM 사용법"></a>BEM 사용법</h2><p><br></p>
 <hr>
 <blockquote>
 <p><strong>Reference</strong></p>
 <ul>
 <li><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM 공식 문서</a></li>
-<li></li>
+<li><a href="https://www.creativebloq.com/features/a-web-designers-guide-to-css-methodologies" rel="external nofollow noopener noreferrer" target="_blank">A web designer’s guide to CSS methodologies</a></li>
+<li><a href="https://m.alphasights.com/bem-i-finally-understand-b0c74815d5b0" rel="external nofollow noopener noreferrer" target="_blank">BEM I understand</a></li>
+<li><a href="https://medium.com/witinweb/css-방법론-1-bem-block-element-modifier-1c03034e65a1" rel="external nofollow noopener noreferrer" target="_blank">CSS방법론 BEM</a></li>
 </ul>
 </blockquote>
 </section>
@@ -222,7 +243,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CSS-방법론-BEM에-대하여"><span class="toc-nav-text">CSS 방법론 - BEM에 대하여</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-소개"><span class="toc-nav-text">BEM 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-이란"><span class="toc-nav-text">BEM 이란?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-사용법"><span class="toc-nav-text">BEM 사용법</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CSS-방법론-BEM에-대하여"><span class="toc-nav-text">CSS 방법론, BEM에 대하여</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-소개"><span class="toc-nav-text">BEM 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#빌어먹을-CSS"><span class="toc-nav-text">빌어먹을 CSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CSS-방법론"><span class="toc-nav-text">CSS 방법론</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-이란"><span class="toc-nav-text">BEM 이란?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-사용법"><span class="toc-nav-text">BEM 사용법</span></a></li></ol></li></ol>
     
   </div>
 </aside> 
