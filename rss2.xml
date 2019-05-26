@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>프론트 앤드 개발 기록 블로그(리액트)</description>
-    <pubDate>Sun, 26 May 2019 03:56:05 GMT</pubDate>
+    <pubDate>Sun, 26 May 2019 04:10:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -20,12 +20,12 @@
       
         
         
-          &lt;h1 id=&quot;BEM-00-BEM에-대하여&quot;&gt;&lt;a href=&quot;#BEM-00-BEM에-대하여&quot; class=&quot;headerlink&quot; title=&quot;BEM - 00. BEM에 대하여&quot;&gt;&lt;/a&gt;BEM - 00. BEM에 대하여&lt;/h1&gt;
+          &lt;h1 id=&quot;BEM-00-BEM에-대하여&quot;&gt;&lt;a href=&quot;#BEM-00-BEM에-대하여&quot; class=&quot;headerlink&quot; title=&quot;BEM - 00. BEM에 대하여&quot;&gt;&lt;/a&gt;BEM - 00. BEM에 대하여&lt;/h1&gt;&lt;h2 id=&quot;BEM이란&quot;&gt;
         
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="BEM-00-BEM에-대하여"><a href="#BEM-00-BEM에-대하여" class="headerlink" title="BEM - 00. BEM에 대하여"></a>BEM - 00. BEM에 대하여</h1>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="BEM-00-BEM에-대하여"><a href="#BEM-00-BEM에-대하여" class="headerlink" title="BEM - 00. BEM에 대하여"></a>BEM - 00. BEM에 대하여</h1><h2 id="BEM이란"><a href="#BEM이란" class="headerlink" title="BEM이란?"></a>BEM이란?</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트 앤드 개발 로드맵</a>을 보면 </p><p><img src="image-20190526130928185-8843768.png" width="80%"></p><p><br></p><hr><blockquote><p><strong>Reference</strong></p><ul><li><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM 공식 문서</a></li><li></li></ul></blockquote>]]></content:encoded>
       
       <comments>http://snowjang24.github.io/2019/05/26/BEM-Intro/#disqus_thread</comments>
     </item>

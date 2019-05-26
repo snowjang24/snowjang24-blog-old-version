@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://snowjang24.github.io/2019/05/26/BEM-Intro/</loc>
+        <lastmod>2019-05-26T04:10:09.735Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://snowjang24.github.io/2019/05/24/TDD-01/</loc>
         <lastmod>2019-05-26T03:56:14.293Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +26,6 @@
     <url>
         <loc>http://snowjang24.github.io/2019/05/23/TDD-00/</loc>
         <lastmod>2019-05-26T03:56:10.829Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://snowjang24.github.io/2019/05/26/BEM-Intro/</loc>
-        <lastmod>2019-05-26T03:56:05.732Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
