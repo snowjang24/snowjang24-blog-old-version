@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140709405-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-140709405-1");
+  </script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="프론트 앤드 개발 기록 블로그(리액트)">
+  <meta name="keyword" content="">
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체 | JSnow 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script> 
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>JSnow</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+ <div id="article-banner">
+  <h2>Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체</h2>
+  <p class="post-date">2019-05-24</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Javascript-TDD-01장-다중-통화를-지원하는-Money-객체"><a href="#Javascript-TDD-01장-다중-통화를-지원하는-Money-객체" class="headerlink" title="Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체"></a>Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체</h1><h2 id="테스트-주도-개발-맛보기"><a href="#테스트-주도-개발-맛보기" class="headerlink" title="테스트 주도 개발 맛보기"></a>테스트 주도 개발 맛보기</h2><p>화폐 예제를 이용하여 차례차례 테스트 주도 개발의 세부적인 과정에 대해서 학습해보려고 합니다.</p>
+<h3 id="TDD의-시작"><a href="#TDD의-시작" class="headerlink" title="TDD의 시작"></a>TDD의 시작</h3><p>TDD의 주요 흐름은 다음과 같습니다.</p>
+<ol>
+<li>테스트를 하나 추가함</li>
+<li>모든 테스트를 실행하고 새로 추가한 것이 실패하는지 확인</li>
+<li>코드를 조금 바꿈(리팩토링)</li>
+<li>모든 테스트를 실행하고 전부 성공하는지 확인</li>
+<li>리팩토링을 통해 중복을 제거</li>
+</ol>
+<p>먼저 화폐 예제 개발을 위해 필요한 Todo리스트를 작성합니다.</p>
+<blockquote>
+<p>\$5 + 10CHF = \$10(환율이 2:1인 경우)</p>
+<p><strong>\$5 X 2 = \$10</strong></p>
+</blockquote>
+<h3 id="테스트-생성"><a href="#테스트-생성" class="headerlink" title="테스트 생성"></a>테스트 생성</h3><p>먼저 객체를 만드는 것이 아니라 테스트를 우선 작성합니다. </p>
+<p>테스트 작성을 위해서는 <strong>Mocha</strong>라는 유닛 테스트 툴을 이용할 것이며 <code>assertion</code>으로 <strong>chai</strong>를 이용합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.spec.js</span></span><br><span class="line"><span class="keyword">const</span> Module = <span class="built_in">require</span>(<span class="string">"../Money.controller"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"chai"</span>).should();</span><br></pre></td></tr></table></figure>
+<p>테스트를 작성할 때는 작은 것부터 시작하는 게 좋습니다. 그게 아니라면 아예 손을 대지 않는 게 좋습니다.</p>
+<p>또한, 테스트를 작성할 때에는 메서드의 완벽한 인터페이스에 대해 상상해보는 것이 좋습니다.</p>
+<p>앞의 Mocha를 이용하여 간단한 곱셈 예제의 테스트를 작성하면 다음과 같습니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.spec.js</span></span><br><span class="line"><span class="keyword">const</span> Module = <span class="built_in">require</span>(<span class="string">"../Money.controller"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"chai"</span>).should();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> Dollar = Module.Dollar;</span><br><span class="line">describe(<span class="string">"testMultiplication()"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> five = <span class="keyword">new</span> Dollar(<span class="number">5</span>);</span><br><span class="line">  it(<span class="string">"retrun 값은 10이어야 합니다."</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    five.times(<span class="number">2</span>);</span><br><span class="line">    five.amount.should.equals(<span class="number">10</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>이렇게 작성한 예제를 돌려보면 다음과 같은 이유에 의한 컴파일 에러가 예상됩니다.</p>
+<ul>
+<li>Dollar 클래스가 없음 </li>
+<li>생성자가 없음</li>
+<li>times() 메서드가 없음</li>
+<li>amount 값이 없음</li>
+</ul>
+<h3 id="실패하는-코드-작성"><a href="#실패하는-코드-작성" class="headerlink" title="실패하는 코드 작성"></a>실패하는 코드 작성</h3><p>이제 이 에러들을 차례로 없애보면 다음과 같습니다.</p>
+<ol>
+<li><p>Dollar 클래스 생성</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;Dollar&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성자 생성</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(amount)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;Dollar&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>times() 메서드 구현</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(amount)&#123;&#125;</span><br><span class="line">	times(multiplier)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;Dollar&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>amount 변수 선언</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(amount)&#123;</span><br><span class="line">  	<span class="keyword">this</span>.amount = amount;</span><br><span class="line">  &#125;</span><br><span class="line">	times(multiplier)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;Dollar&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>이렇게 구현하고 나서 테스트를 돌려보면 테스트가 실패하는 것을 확인할 수 있습니다. 이 실패가 책에서 표현하는 빨간 막대입니다. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0 passing (13ms)</span><br><span class="line">1 failing</span><br><span class="line"></span><br><span class="line">1) testMultiplication()</span><br><span class="line">     retrun 값은 10이어야 합니다.:</span><br><span class="line">   AssertionError: expected &#123; amount: 10 &#125; to equal 5</span><br><span class="line">    at Context.&lt;anonymous&gt; (<span class="built_in">test</span>/Money.controller.spec.js:10:27)</span><br></pre></td></tr></table></figure>
+<h3 id="약간의-수정과-테스트-성공"><a href="#약간의-수정과-테스트-성공" class="headerlink" title="약간의 수정과 테스트 성공"></a>약간의 수정과 테스트 성공</h3><p>이제 우리의 목표는 완벽한 어플리케이션 개발이 아닙니다. 이 실패한 테스트를 통과시키는 것이 목표가 되는 것입니다.</p>
+<p>이를 위해 다음과 같이 최소한의 작업을 해주어 테스트를 통과하도록 합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.spec.js</span></span><br><span class="line"><span class="keyword">const</span> Module = <span class="built_in">require</span>(<span class="string">"../Money.controller"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"chai"</span>).should();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> Dollar = Module.Dollar;</span><br><span class="line">describe(<span class="string">"testMultiplication()"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> five = <span class="keyword">new</span> Dollar(<span class="number">5</span>);</span><br><span class="line">  it(<span class="string">"retrun 값은 10이어야 합니다."</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    five.times(<span class="number">2</span>);</span><br><span class="line">    five.amount = <span class="number">10</span>;</span><br><span class="line">    five.amount.should.equals(<span class="number">10</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">testMultiplication()</span><br><span class="line">  ✓ retrun 값은 10이어야 합니다.</span><br><span class="line"></span><br><span class="line">1 passing (8ms)</span><br></pre></td></tr></table></figure>
+<h3 id="중복-제거"><a href="#중복-제거" class="headerlink" title="중복 제거"></a>중복 제거</h3><p>아까의 TDD 주기 중 4번에 해당하는 항목까지 완료하였습니다. </p>
+<p>이제 중복을 제거합니다. 테스트 데이터와 코드 사이에 존재하는 중복을 제거합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(amount) &#123;</span><br><span class="line">    <span class="keyword">this</span>.amount = amount;</span><br><span class="line">  &#125;</span><br><span class="line">  times(multiplier) &#123;</span><br><span class="line">    <span class="keyword">this</span>.amount = <span class="number">5</span> * <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; Dollar &#125;;</span><br></pre></td></tr></table></figure>
+<p>이런 단계가 작게 느껴져 이것보다는 더 진행해야 하는 게 아닌가 하는 의문이 들 수 있습니다.</p>
+<p>TDD의 핵심은 이런 작은 단계로 작업하는 방법을 배워 저절로 적절한 크기의 단계로 작업하는 것입니다.</p>
+<p>이제 본격적으로 테스트 코드와 작업 코드 사이의 중복을 제거합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.js</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dollar</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(amount) &#123;</span><br><span class="line">    <span class="keyword">this</span>.amount = amount;</span><br><span class="line">  &#125;</span><br><span class="line">  times(multiplier) &#123;</span><br><span class="line">    <span class="keyword">this</span>.amount *= multiplier;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; Dollar &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Money.controller.spec.js</span></span><br><span class="line"><span class="keyword">const</span> Module = <span class="built_in">require</span>(<span class="string">"../Money.controller"</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">"chai"</span>).should();</span><br><span class="line"><span class="keyword">let</span> Dollar = Module.Dollar;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"testMultiplication()"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> five = <span class="keyword">new</span> Dollar(<span class="number">5</span>);</span><br><span class="line">  it(<span class="string">"retrun 값은 10이어야 합니다."</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    five.times(<span class="number">2</span>);</span><br><span class="line">    five.amount.should.equals(<span class="number">10</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>이제 드디어 한 주기가 끝이 났습니다. 드디어 투두 리스트에서 한 가지를 제거할 수 있습니다.</p>
+<blockquote>
+<p>\$5 + 10CHF = \$10(환율이 2:1인 경우)</p>
+<p><del><strong>\$5 X 2 = \$10</strong></del></p>
+</blockquote>
+</section>
+    <!-- Tags START -->
+    
+    <div class="tags">
+      <span>Tags:</span>
+      
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
+
+  <a href="/tags#tdd">
+    <span class="tag-code">tdd</span>
+  </a>
+
+    </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/23/TDD-00/">
+        <span class="nav-arrow">← </span>
+        
+          Javascript TDD - 00장. TDD에 대하여
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/24/Mocha/">
+        
+          Javascript TDD를 위한 Mocha와 Chai
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+
+    
+    <!-- Disqus START -->
+    <div id="disqus_thread"></div>
+    <!-- Disqus END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+   <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Javascript-TDD-01장-다중-통화를-지원하는-Money-객체"><span class="toc-nav-text">Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#테스트-주도-개발-맛보기"><span class="toc-nav-text">테스트 주도 개발 맛보기</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#TDD의-시작"><span class="toc-nav-text">TDD의 시작</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#테스트-생성"><span class="toc-nav-text">테스트 생성</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#실패하는-코드-작성"><span class="toc-nav-text">실패하는 코드 작성</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#약간의-수정과-테스트-성공"><span class="toc-nav-text">약간의 수정과 테스트 성공</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#중복-제거"><span class="toc-nav-text">중복 제거</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside> 
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function() {
+    var url = "http://snowjang24.github.io/2019/05/24/TDD-01/";
+    // var banner = "";
+    // if (banner !== "" && banner !== "undefined" && banner !== "null") {
+    //   $("#article-banner").css({
+    //     "background-image": "url(" + banner + ")"
+    //   });
+    // } else {
+    //   $("#article-banner").geopattern(url);
+    // }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function() {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+      $(this).css({
+        cursor: "default"
+      });
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function() {
+      var src = $(this).attr("src");
+      if (src !== "http://file.muyutech.com/error-img.png") {
+        var imageW = $(this).width();
+        var imageH = $(this).height();
+
+        var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+        zoom = zoom < 1 ? 1 : zoom;
+        zoom = zoom > 2 ? 2 : zoom;
+        var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+        $("body").append(
+          '<div class="image-view-wrap"><div class="image-view-inner"><img src="' +
+            src +
+            '" /></div></div>'
+        );
+        $(".image-view-wrap").addClass("wrap-active");
+        $(".image-view-wrap img").css({
+          width: `${imageW}`,
+          transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        });
+        $("html").css("overflow", "hidden");
+
+        $(".image-view-wrap").on("click", function() {
+          $(this).remove();
+          $("html").attr("style", "");
+        });
+      }
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== "undefined") {
+      var gitment = new Gitment({
+        id: "Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement("div");
+            container.lang = "en-US";
+            container.className = "gitment-container gitment-root-container";
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+      });
+      gitment.render(document.getElementById("comments"));
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = 'jsnows';
+  
+  var disqus_url = 'http://snowjang24.github.io/2019/05/24/TDD-01/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+ <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" rel="external nofollow noopener noreferrer" target="_blank">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

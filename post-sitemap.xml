@@ -8,16 +8,32 @@
     </url>
 
     <url>
-        <loc>http://snowjang24.github.io/2019/05/24/Mocha/</loc>
-        <lastmod>2019-05-24T12:41:50.199Z</lastmod>
+        <loc>http://snowjang24.github.io/2019/05/24/TDD-01/</loc>
+        <lastmod>2019-05-26T03:52:21.402Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://snowjang24.github.io/2019/05/23/Chap00/</loc>
-        <lastmod>2019-05-24T12:17:09.006Z</lastmod>
+        <loc>http://snowjang24.github.io/2019/05/23/TDD-00/</loc>
+        <lastmod>2019-05-26T03:52:07.432Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://snowjang24.github.io/2019/05/26/BEM-Intro/</loc>
+        <lastmod>2019-05-26T03:50:41.897Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://snowjang24.github.io/2019/05/24/Mocha/</loc>
+        <lastmod>2019-05-25T04:37:34.662Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,14 +42,6 @@
     <url>
         <loc>http://snowjang24.github.io/2018/12/27/hexo%EB%A1%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EB%8A%94-%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
         <lastmod>2019-05-24T11:55:13.898Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://snowjang24.github.io/2019/05/24/Chap01/</loc>
-        <lastmod>2019-05-24T11:09:08.734Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

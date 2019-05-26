@@ -18,7 +18,7 @@
   <meta name="keyword" content="">
    <link rel="shortcut icon" href="/css/images/logo.png"> 
   <title>
-     JSnow 
+     BEM-Intro | JSnow 
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
@@ -143,59 +143,153 @@
   </div>
 </header>
  <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">아카이브</p>
+  <h2>BEM-Intro</h2>
+  <p class="post-date">2019-05-26</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-     <section class="time-section">
-  <h1 class="section-year">
-    2019
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"></section>
+    <!-- Tags START -->
     
+    <!-- Tags END -->
+    <!-- NAV START -->
     
-      <div class="section-list-item">
-        <a href="/2019/05/26/BEM-Intro/" class="archive-title">BEM-Intro</a>
-        <p class="archive-date">05-26</p>
-      </div>
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <div class="section-list-item">
-        <a href="/2019/05/24/Mocha/" class="archive-title">Javascript TDD를 위한 Mocha와 Chai</a>
-        <p class="archive-date">05-24</p>
-      </div>
+      <a class="nav-left" href="/2019/05/24/Mocha/">
+        <span class="nav-arrow">← </span>
+        
+          Javascript TDD를 위한 Mocha와 Chai
+        
+      </a>
     
-      <div class="section-list-item">
-        <a href="/2019/05/24/TDD-01/" class="archive-title">Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체</a>
-        <p class="archive-date">05-24</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/05/23/TDD-00/" class="archive-title">Javascript TDD - 00장. TDD에 대하여</a>
-        <p class="archive-date">05-23</p>
-      </div>
     
   </div>
-</section>  <section class="time-section">
-  <h1 class="section-year">
-    2018
-  </h1>
-  <div class="section-list">
+
+    <!-- NAV END -->
+
     
+    <!-- Disqus START -->
+    <div id="disqus_thread"></div>
+    <!-- Disqus END -->
     
-      <div class="section-list-item">
-        <a href="/2018/12/27/hexo로-시작하는-블로그/" class="archive-title">HEXO와 Github page로 시작하는 블로그</a>
-        <p class="archive-date">12-27</p>
-      </div>
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+   <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="nav">none</ol>
     
   </div>
-</section> 
+</aside> 
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function() {
-    var url = "http://snowjang24.github.io/tags/chai/index.html";
-    // $('#article-banner').geopattern(url);
+    var url = "http://snowjang24.github.io/2019/05/26/BEM-Intro/";
+    // var banner = "";
+    // if (banner !== "" && banner !== "undefined" && banner !== "null") {
+    //   $("#article-banner").css({
+    //     "background-image": "url(" + banner + ")"
+    //   });
+    // } else {
+    //   $("#article-banner").geopattern(url);
+    // }
     $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function() {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+      $(this).css({
+        cursor: "default"
+      });
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function() {
+      var src = $(this).attr("src");
+      if (src !== "http://file.muyutech.com/error-img.png") {
+        var imageW = $(this).width();
+        var imageH = $(this).height();
+
+        var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+        zoom = zoom < 1 ? 1 : zoom;
+        zoom = zoom > 2 ? 2 : zoom;
+        var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+        $("body").append(
+          '<div class="image-view-wrap"><div class="image-view-inner"><img src="' +
+            src +
+            '" /></div></div>'
+        );
+        $(".image-view-wrap").addClass("wrap-active");
+        $(".image-view-wrap img").css({
+          width: `${imageW}`,
+          transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        });
+        $("html").css("overflow", "hidden");
+
+        $(".image-view-wrap").on("click", function() {
+          $(this).remove();
+          $("html").attr("style", "");
+        });
+      }
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== "undefined") {
+      var gitment = new Gitment({
+        id: "BEM-Intro",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement("div");
+            container.lang = "en-US";
+            container.className = "gitment-container gitment-root-container";
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+      });
+      gitment.render(document.getElementById("comments"));
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = 'jsnows';
+  
+  var disqus_url = 'http://snowjang24.github.io/2019/05/26/BEM-Intro/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
  <div class="scroll-top">
