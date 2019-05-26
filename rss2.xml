@@ -8,11 +8,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>프론트 앤드 개발 기록 블로그(리액트)</description>
-    <pubDate>Sun, 26 May 2019 04:10:09 GMT</pubDate>
+    <pubDate>Sun, 26 May 2019 05:04:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>BEM - 00. BEM에 대하여</title>
+      <title>CSS 방법론, BEM에 대하여</title>
       <link>http://snowjang24.github.io/2019/05/26/BEM-Intro/</link>
       <guid>http://snowjang24.github.io/2019/05/26/BEM-Intro/</guid>
       <pubDate>Sun, 26 May 2019 03:50:41 GMT</pubDate>
@@ -20,12 +20,12 @@
       
         
         
-          &lt;h1 id=&quot;BEM-00-BEM에-대하여&quot;&gt;&lt;a href=&quot;#BEM-00-BEM에-대하여&quot; class=&quot;headerlink&quot; title=&quot;BEM - 00. BEM에 대하여&quot;&gt;&lt;/a&gt;BEM - 00. BEM에 대하여&lt;/h1&gt;&lt;h2 id=&quot;BEM이란&quot;&gt;
+          &lt;h1 id=&quot;CSS-방법론-BEM에-대하여&quot;&gt;&lt;a href=&quot;#CSS-방법론-BEM에-대하여&quot; class=&quot;headerlink&quot; title=&quot;CSS 방법론 - BEM에 대하여&quot;&gt;&lt;/a&gt;CSS 방법론 - BEM에 대하여&lt;/h1&gt;&lt;h2 id=&quot;BEM-소
         
       
       </description>
       
-      <content:encoded><![CDATA[<h1 id="BEM-00-BEM에-대하여"><a href="#BEM-00-BEM에-대하여" class="headerlink" title="BEM - 00. BEM에 대하여"></a>BEM - 00. BEM에 대하여</h1><h2 id="BEM이란"><a href="#BEM이란" class="headerlink" title="BEM이란?"></a>BEM이란?</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트 앤드 개발 로드맵</a>을 보면 </p><p><img src="image-20190526130928185-8843768.png" width="80%"></p><p><br></p><hr><blockquote><p><strong>Reference</strong></p><ul><li><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM 공식 문서</a></li><li></li></ul></blockquote>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="CSS-방법론-BEM에-대하여"><a href="#CSS-방법론-BEM에-대하여" class="headerlink" title="CSS 방법론 - BEM에 대하여"></a>CSS 방법론 - BEM에 대하여</h1><h2 id="BEM-소개"><a href="#BEM-소개" class="headerlink" title="BEM 소개"></a>BEM 소개</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트앤드 개발 로드맵</a>을 보면 CSS아키텍쳐로 <a href="https://en.bem.info/" rel="external nofollow noopener noreferrer" target="_blank">BEM</a>을 추천하고 있다(여기서 추천하는 기술은 많이 쓰이고 있는 기술들이라, 한 번 전체적으로 공부해보는 것이 좋을 것 같다).</p><p><img src="image-20190526130928185-8843768.png" width="80%"></p><p>2017년에는 추천하는 기술에 포함되지 않았던 BEM은 2018년에 들어 추천하는 기술에 올랐고, 2019년에는 여전히 추천하는 기술에 포함돼있지만 <a href="[https://medium.com/@okys2010/%EB%AA%A8%EB%8D%98-css-1-css-in-js-c1c53d9bbbc9](https://medium.com/@okys2010/모던-css-1-css-in-js-c1c53d9bbbc9">CSS in JS</a>)의 등장으로 금방 자리를 내어줄 것 같다.</p><blockquote><p>CSS in JS는 React같은 Front-End Framework에 최적화되어 있다. </p><p>이런 프레임워크의 사용이 주를 이루는 요즘, 금방 BEM을 사용하지 않게 될 것 같다는 생각이 들었다. </p><p>추후에 CSS in JS에 관해서도 공부해봐야겠다.</p></blockquote><p>하지만 위의 사진에도 있듯이 이런 방법론이 있다는 것에 의미를 두고 간단히 정리를 해보려 한다.</p><p><br></p><h3 id="BEM-이란"><a href="#BEM-이란" class="headerlink" title="BEM 이란?"></a>BEM 이란?</h3><p>BEM은 Block, Element, Modifier의 약자로 컴포넌트 기반의 웹 개발 </p><h2 id="BEM-사용법"><a href="#BEM-사용법" class="headerlink" title="BEM 사용법"></a>BEM 사용법</h2><p><br></p><hr><blockquote><p><strong>Reference</strong></p><ul><li><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM 공식 문서</a></li><li></li></ul></blockquote>]]></content:encoded>
       
       <comments>http://snowjang24.github.io/2019/05/26/BEM-Intro/#disqus_thread</comments>
     </item>
