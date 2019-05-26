@@ -8,17 +8,24 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>프론트 앤드 개발 기록 블로그(리액트)</description>
-    <pubDate>Sun, 26 May 2019 03:50:41 GMT</pubDate>
+    <pubDate>Sun, 26 May 2019 03:56:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>BEM-Intro</title>
+      <title>BEM - 00. BEM에 대하여</title>
       <link>http://snowjang24.github.io/2019/05/26/BEM-Intro/</link>
       <guid>http://snowjang24.github.io/2019/05/26/BEM-Intro/</guid>
       <pubDate>Sun, 26 May 2019 03:50:41 GMT</pubDate>
       <description>
       
+        
+        
+          &lt;h1 id=&quot;BEM-00-BEM에-대하여&quot;&gt;&lt;a href=&quot;#BEM-00-BEM에-대하여&quot; class=&quot;headerlink&quot; title=&quot;BEM - 00. BEM에 대하여&quot;&gt;&lt;/a&gt;BEM - 00. BEM에 대하여&lt;/h1&gt;
+        
+      
       </description>
+      
+      <content:encoded><![CDATA[<h1 id="BEM-00-BEM에-대하여"><a href="#BEM-00-BEM에-대하여" class="headerlink" title="BEM - 00. BEM에 대하여"></a>BEM - 00. BEM에 대하여</h1>]]></content:encoded>
       
       <comments>http://snowjang24.github.io/2019/05/26/BEM-Intro/#disqus_thread</comments>
     </item>
@@ -43,7 +50,7 @@
     </item>
     
     <item>
-      <title>Javascript TDD - 01장. 다중 통화를 지원하는 Money 객체</title>
+      <title>Javascript TDD - 01. 다중 통화를 지원하는 Money 객체</title>
       <link>http://snowjang24.github.io/2019/05/24/TDD-01/</link>
       <guid>http://snowjang24.github.io/2019/05/24/TDD-01/</guid>
       <pubDate>Fri, 24 May 2019 04:32:41 GMT</pubDate>
@@ -62,7 +69,7 @@
     </item>
     
     <item>
-      <title>Javascript TDD - 00장. TDD에 대하여</title>
+      <title>Javascript TDD - 00. TDD에 대하여</title>
       <link>http://snowjang24.github.io/2019/05/23/TDD-00/</link>
       <guid>http://snowjang24.github.io/2019/05/23/TDD-00/</guid>
       <pubDate>Wed, 22 May 2019 16:06:46 GMT</pubDate>
