@@ -602,6 +602,17 @@ h2.article-head {
 .article-summary ol li {
   padding: 5px 0;
 }
+.markdown-content ul li > code,
+.article-summary ul li > code,
+.markdown-content ol li > code,
+.article-summary ol li > code {
+  background-color: #f8f8f8;
+  color: #e96900;
+  padding: 3px 5px;
+  margin: 0 2px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
 .markdown-content img,
 .article-summary img {
   max-width: 100%;
