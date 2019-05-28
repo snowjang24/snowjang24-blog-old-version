@@ -173,7 +173,12 @@
 <p><strong>컴포넌트</strong>(Component)란? 독립적이고 완결된 뷰를 생성하기 위하여 HTML, CSS, 자바스크립트를 하나의 단위로 묶는 것을 의미한다. 쉽게 말해, 웹을 구성하는 동작 가능한 하나의 부품이다.</p>
 </blockquote>
 <p><img src="image-20190526163009708-8855809.png" width="90%"></p>
-<p>먼저, BEM은 <code>class</code>작명 규칙을 기본으로 한다. BEM에 따라 <code>class</code>를 작명할 때, 이름만 봐도 어떤 기능을 하는지 알 수 있도록 이름을 명확하게 짓는다. 작명 규칙 뿐만 아니라 파일 구조에 관한 규칙 또한 존재한다. 이러한 규칙들을 통해 개발 및 유지∙보수가 쉬운 코드를 작성하는 것을 목표로 한다.</p>
+<p>컴포넌트화하여 개발하면, 아래 그림과 같이 배치를 바꿔야 하는 상황에서 많은 코드 변화 없이 유동적인 배치가 가능해진다.</p>
+<p><img src="v80tUiEPgSQtyW9a7C8rxdn-5EM.png" width="80%"></p>
+<p><img src="0bbhZyhaBhRzqBh5nLYQEnFpDTk.png" width="80%"></p>
+<p>또한, 코드를 재사용하는데 있어서 큰 장점을 지니게 된다.</p>
+<p><img src="VBlEdksG7XkL4DLPWe4rcYb5hGo.png"></p>
+<p>먼저, BEM은 <code>class</code>작명 규칙을 기본으로 한다. BEM에 따라 <code>class</code>를 작명할 때, 이름만 봐도 어떤 기능을 하는지 알 수 있도록 이름을 명확하게 짓는다. 작명 규칙 뿐만 아니라 파일 구조에 관한 규칙 또한 존재한다. 이러한 규칙들을 통해 개발 및 유지∙보수가 쉬운 코드를 작성r하는 것을 목표로 한다.</p>
 <p>BEM의 핵심 개념은 다음과 같다.</p>
 <ul>
 <li>Block</li>
@@ -194,9 +199,11 @@
 <li>태그, <code>id</code> 선택자를 사용하면 안된다.</li>
 </ul>
 <p>블럭은 각 컴포넌트를 담는 그릇과 같다. 이렇게 외부에 영향을 주지 않는 규칙이 있는 이유는, 재사용성과 확장성을 고려하기 때문이다. 만약 여백이나 위치와 관련된 스타일이 적용되어 있다면 해당 블럭을 다른 곳에 이식하여 사용하려 할 때, 다시 여백이나 위치를 설정해야하는 등의 귀찮은 일이 발생할 수 있다. </p>
+<p><img src="kFetIbKxQdABHhUecbic45Il0Bg-20190528110849730.png" width="80%"></p>
 <p>추가로, 블럭을 사용할 때는 중첩해서 사용할 수 있다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- header block --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 중첩된 logo block --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 중첩된 search-form block --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"search-form"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-요소-Element"><a href="#2-요소-Element" class="headerlink" title="2. 요소(Element)"></a>2. 요소(Element)</h4><p><strong>요소</strong>(Element)는 단독으로 사용할 수 없는, <strong>블럭의 부분적인 구성요소</strong>다. 요소 역시 블럭과 동일하게 목적(or 의미)을 기반으로 작명한다. 이름을 구성할 때 반드시 블럭 이름과 함께 적어준다. ex) <code>블럭이름__요소이름</code></p>
+<p><img src="cPrdQL4EZZdhPIrcYOayygPBSm4.png" width="80%"></p>
 <p>만약, <code>search-form</code>블럭이 있고, 그 내부에는 <code>input</code>과 <code>button</code>요소가 있는 경우에는 다음과 같이 작성한다.</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- search-form block --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"search-form"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- search-form block 안에 있는 input element --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"search-form__input"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- search-form block 안에 있는 button element --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"search-form__button"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>블럭과 동일하게 중첩해서 사용할 수 있지만 주의할 점이 있다. 요소는 항상 요소의 일부가 아닌, 블럭의 일부여야 한다. 이 규칙에 따라 <code>block__element1__element2</code>과 같은 이름은 절대 나올 수 없다.</p>
@@ -213,6 +220,7 @@
 <blockquote>
 <p>기억하기로는, 이전에 BEM방법론에서 Modifier는 _(언더바 한 개)가 아닌 –(하이픈 두 개)를 썼던 것으로 기억 한다. 대다수의 자료들이 이를 기반으로 만들어 졌다. 기왕이면 바뀌기 전∙후 모두를 아는 것이 좋을 것 같다.</p>
 </blockquote>
+<p><img src="WSU5nwZla7p44W2tdxiP371xx38.png" width="80%"></p>
 <p>수식어의 타입은 크게 <strong>Boolean</strong>과 <strong>Key-value</strong>로 나눌 수 있다. </p>
 <p>먼저, Boolean의 경우 주로 <code>true</code>, <code>false</code>를 값으로 가질 때, 혹은 값을 특정할 수 없을 때 쓴다. <code>focused</code>를 예로 들면,  포커스 되었는지 아닌지가 중요할 때 쓴다. </p>
 <p>기본적으로 값을 <code>true</code>라고 생각하면 된다. <code>focused</code>를 Modifier로 썼다면 실제로는 <code>focused_true</code>라고 쓰여있다고 생각하면 이해하기 쉽다.</p>
