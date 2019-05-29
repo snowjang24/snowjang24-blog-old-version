@@ -9,7 +9,15 @@
 
     <url>
         <loc>http://snowjang24.github.io/2019/05/26/BEM-Intro/</loc>
-        <lastmod>2019-05-28T12:08:37.084Z</lastmod>
+        <lastmod>2019-05-29T05:01:38.367Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://snowjang24.github.io/2019/05/24/Mocha/</loc>
+        <lastmod>2019-05-29T04:06:50.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,14 +26,6 @@
     <url>
         <loc>http://snowjang24.github.io/2019/05/27/%EC%9B%B9%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-Web-Component-%EA%B7%B8%EA%B2%8C-%EB%AD%90%EC%97%90%EC%9A%94/</loc>
         <lastmod>2019-05-27T01:43:42.580Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://snowjang24.github.io/2019/05/24/Mocha/</loc>
-        <lastmod>2019-05-26T08:33:01.403Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

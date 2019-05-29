@@ -513,11 +513,11 @@ h2.article-head {
 .markdown-content strong:before,
 .article-summary strong:before {
   content: "";
-  background-color: rgba(255,231,79,0.6);
+  background-color: rgba(255,231,79,0.7);
   z-index: -1;
-  height: 4px;
+  height: 7px;
   width: 100%;
-  bottom: 0;
+  bottom: -1px;
   position: absolute;
 }
 .markdown-content pre,
