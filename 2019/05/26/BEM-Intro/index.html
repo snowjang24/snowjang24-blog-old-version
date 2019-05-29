@@ -166,7 +166,7 @@
 <p><img src="image-20190526160120034-8854080.png" width="90%"></p>
 <p>나중에 CSS 방법론에 대해 알게 되었고, 그 중 BEM을 추천한다라는 것까지 알게 되었다. 그 생각까지가 BEM에 대한 마지막 기억이다.</p>
 <p><br></p>
-<h3 id="CSS-방법론"><a href="#CSS-방법론" class="headerlink" title="CSS 방법론"></a>CSS 방법론</h3><p><strong>CSS 방법론</strong>(CSS Methodology)은 모듈화, 재사용 가능성과 확장 가능성 등을 고려하여 <strong>CSS를 잘 작성하기 위한 지침</strong>이다. 쉽게 말해, 개발자가 코드를 잘 작성하고 유지∙보수하기 쉽게 만들기 위한 CSS 작성 규칙이다. 프레임워크나 라이브러리 같은 것이 아니다.</p>
+<h3 id="CSS-방법론"><a href="#CSS-방법론" class="headerlink" title="CSS 방법론"></a>CSS 방법론</h3><p><strong>CSS 방법론(CSS Methodology)</strong>은 모듈화, 재사용 가능성과 확장 가능성 등을 고려하여 <strong>CSS를 잘 작성하기 위한 지침</strong>이다. 쉽게 말해, 개발자가 코드를 잘 작성하고 유지∙보수하기 쉽게 만들기 위한 CSS 작성 규칙이다. 프레임워크나 라이브러리 같은 것이 아니다.</p>
 <p>CSS 방법론에는 OOCSS, BEM SMACSS등이 있는데, 이번 포스팅에서는 그 중 가장 많이 쓰이는 BEM에 대해서만 다루려 한다.</p>
 <p><br></p>
 <h3 id="BEM-이란"><a href="#BEM-이란" class="headerlink" title="BEM 이란?"></a>BEM 이란?</h3><p><strong>BEM</strong>은 <strong>Block__Element_Modifier</strong>의 약자로, 웹 UI를 블럭 단위로 컴포넌트화하여 개발하는 개발 방식이다. </p>
@@ -188,7 +188,7 @@
 <li><strong>File structure</strong></li>
 </ul>
 <p><br></p>
-<h3 id="BEM-핵심-개념"><a href="#BEM-핵심-개념" class="headerlink" title="BEM 핵심 개념"></a>BEM 핵심 개념</h3><h4 id="1-블럭-Block"><a href="#1-블럭-Block" class="headerlink" title="1. 블럭(Block)"></a>1. 블럭(Block)</h4><p><strong>블럭</strong>(Block)은 재사용 가능하고 기능적으로 독립된 페이지 구성 요소를 의미한다. 여기서 블럭은 상태가 아닌, <strong>목적(or 의미)</strong>을 기반으로 <strong>작명</strong>한다.</p>
+<h3 id="BEM-핵심-개념"><a href="#BEM-핵심-개념" class="headerlink" title="BEM 핵심 개념"></a>BEM 핵심 개념</h3><h4 id="1-블럭-Block"><a href="#1-블럭-Block" class="headerlink" title="1. 블럭(Block)"></a>1. 블럭(Block)</h4><p><strong>블럭(Block)</strong>은 재사용 가능하고 기능적으로 독립된 페이지 구성 요소를 의미한다. 여기서 블럭은 상태가 아닌, <strong>목적(or 의미)</strong>을 기반으로 <strong>작명</strong>한다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- O 올바른 방법, 의미를 담고 있어야 함 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
@@ -204,7 +204,7 @@
 </li>
 <li>태그, <code>id</code> 선택자를 사용하면 안된다.</li>
 </ul>
-<p>블럭은 각 컴포넌트를 담는 그릇과 같다. 이렇게 외부에 영향을 주지 않는 규칙이 있는 이유는, 재사용성과 확장성을 고려하기 때문이다. 만약 여백이나 위치와 관련된 스타일이 적용되어 있다면 해당 블럭을 다른 곳에 이식하여 사용하려 할 때, 다시 여백이나 위치를 설정해야하는 등의 귀찮은 일이 발생할 수 있다. </p>
+<p>블럭은 각 컴포넌트를 담는 <strong>그릇</strong>과 같다. 이렇게 외부에 영향을 주지 않는 규칙이 있는 이유는, <strong>재사용성</strong>과 <strong>확장성</strong>을 고려하기 때문이다. 만약 여백이나 위치와 관련된 스타일이 적용되어 있다면 해당 블럭을 다른 곳에 이식하여 사용하려 할 때, 다시 여백이나 위치를 설정해야하는 등의 귀찮은 일이 발생할 수 있다. </p>
 <p><img src="kFetIbKxQdABHhUecbic45Il0Bg-20190528110849730.png" width="80%"></p>
 <p>추가로, 블럭을 사용할 때는 중첩해서 사용할 수 있다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- header block --></span>
@@ -215,7 +215,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-요소-Element"><a href="#2-요소-Element" class="headerlink" title="2. 요소(Element)"></a>2. 요소(Element)</h4><p><strong>요소</strong>(Element)는 단독으로 사용할 수 없는, <strong>블럭의 부분적인 구성요소</strong>다. 요소 역시 블럭과 동일하게 목적(or 의미)을 기반으로 작명한다. 이름을 구성할 때 반드시 블럭 이름과 함께 적어준다. ex) <code>블럭이름__요소이름</code></p>
+<h4 id="2-요소-Element"><a href="#2-요소-Element" class="headerlink" title="2. 요소(Element)"></a>2. 요소(Element)</h4><p><strong>요소(Element)</strong>는 단독으로 사용할 수 없는, <strong>블럭의 부분적인 구성요소</strong>다. 요소 역시 블럭과 동일하게 목적(or 의미)을 기반으로 작명한다. 이름을 구성할 때 반드시 블럭 이름과 함께 적어준다. ex) <code>블럭이름__요소이름</code></p>
 <p><img src="cPrdQL4EZZdhPIrcYOayygPBSm4.png" width="80%"></p>
 <p>만약, <code>search-form</code>블럭이 있고, 그 내부에는 <code>input</code>과 <code>button</code>요소가 있는 경우에는 다음과 같이 작성한다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- search-form block --></span>
@@ -283,13 +283,13 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block__elem3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-수식어-Modifier"><a href="#3-수식어-Modifier" class="headerlink" title="3. 수식어(Modifier)"></a>3. 수식어(Modifier)</h4><p><strong>수식어</strong>(Modifier)는 블럭이나 요소의 <strong>모양</strong>(ex. size_s, theme_islands), <strong>상태</strong>(ex. disabled, focused) 그리고 <strong>행동</strong>(ex. derections_left-top)을 정의한다. 기본적으로 <code>블럭이름_수식어이름</code>, <code>블럭이름__요소이름_수식어이름</code> 의 형태로 작성한다.</p>
+<h4 id="3-수식어-Modifier"><a href="#3-수식어-Modifier" class="headerlink" title="3. 수식어(Modifier)"></a>3. 수식어(Modifier)</h4><p><strong>수식어(Modifier)</strong>는 블럭이나 요소의 <strong>모양</strong>(ex. size_s, theme_islands), <strong>상태</strong>(ex. disabled, focused) 그리고 <strong>행동</strong>(ex. derections_left-top)을 정의한다. 기본적으로 <code>블럭이름_수식어이름</code>, <code>블럭이름__요소이름_수식어이름</code> 의 형태로 작성한다.</p>
 <blockquote>
 <p>기억하기로는, 이전에 BEM방법론에서 Modifier는 _(언더바 한 개)가 아닌 –(하이픈 두 개)를 썼던 것으로 기억 한다. 대다수의 자료들이 이를 기반으로 만들어 졌다. <del>기왕이면 바뀌기 전∙후 모두를 아는 것이 좋을 것 같다.</del> 둘 다 가능하다. 사용자 편의에 따라 규칙을 정하고 사용하면 된다.</p>
 </blockquote>
 <p><img src="WSU5nwZla7p44W2tdxiP371xx38.png" width="80%"></p>
-<p>수식어의 타입은 크게 <strong>Boolean</strong>과 <strong>Key-value</strong>로 나눌 수 있다. </p>
-<p>먼저, Boolean의 경우 주로 <code>true</code>, <code>false</code>를 값으로 가질 때, 혹은 값을 특정할 수 없을 때 쓴다. <code>focused</code>를 예로 들면,  포커스 되었는지 아닌지가 중요할 때 쓴다. </p>
+<p>수식어의 타입은 크게 Boolean과 Key-value로 나눌 수 있다. </p>
+<p>먼저, <strong>Boolean</strong>의 경우 주로 <code>true</code>, <code>false</code>를 값으로 가질 때, 혹은 값을 특정할 수 없을 때 쓴다. <code>focused</code>를 예로 들면,  포커스 되었는지 아닌지가 중요할 때 쓴다. </p>
 <p>기본적으로 값을 <code>true</code>라고 생각하면 된다. <code>focused</code>를 Modifier로 썼다면 실제로는 <code>focused_true</code>라고 쓰여있다고 생각하면 이해하기 쉽다.</p>
 <p>보통은 다음과 같은 형태로 쓴다.</p>
 <ul>
@@ -303,7 +303,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-form__button search-form__button_disabled<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>다음으로, Key-value의 경우 수식어의 값이 중요할 때 쓴다. 예로, 사이즈가 작은 버튼의 경우 수식어를  <code>button_size_s</code>이라고 작명한다.</p>
+<p>다음으로, <strong>Key-value</strong>의 경우 수식어의 값이 중요할 때 쓴다. 예로, 사이즈가 작은 버튼의 경우 수식어를  <code>button_size_s</code>이라고 작명한다.</p>
 <p>보통은 다음과 같은 형태로 쓴다.</p>
 <ul>
 <li><code>블럭이름_수식어이름_값</code></li>
@@ -329,7 +329,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Modifier를 통해 앞의 블럭과 요소가 묘사하지 않았던 모양, 상태, 행동을 나타낼 수 있다.</p>
-<h4 id="4-혼합-Mix"><a href="#4-혼합-Mix" class="headerlink" title="4. 혼합(Mix)"></a>4. 혼합(Mix)</h4><p>이렇게 블럭과 요소를 나눠서 확실히 쓰다보면 가끔 블럭과 요소의 경계가 모호해질 때가 온다. 이 때, 블럭과 요소를 섞어서 쓸 수 있는지 의문이 드는데, 결론부터 말하면 가능하다. </p>
+<h4 id="4-혼합-Mix"><a href="#4-혼합-Mix" class="headerlink" title="4. 혼합(Mix)"></a>4. 혼합(Mix)</h4><p>이렇게 블럭과 요소를 나눠서 확실히 쓰다보면 가끔 <strong>블럭과 요소의 경계가 모호해질 때</strong>가 온다. 이 때, 블럭과 요소를 섞어서 쓸 수 있는지 의문이 드는데, 결론부터 말하면 가능하다. </p>
 <p>아래의 예시를 보면 현재 <code>header</code> 블럭 내부의 <code>search-form</code>은 자체적으로 블럭이면서 <code>heder</code> 블럭의 요소이다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- header block --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -412,11 +412,10 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>블럭과 요소 그리고 수정자는 다음과 같이 정리할 수 있다.</p>
 <ul>
-<li><p><strong>블럭</strong>(Block)은 요소에 대한 컨테이너이며 최소한의 스타일을 적용한다.</p>
+<li><strong>블럭(Block)</strong>은 요소에 대한 컨테이너이며 최소한의 스타일을 적용한다.</li>
+<li><p><strong>요소(Element)</strong>는 블럭 내부를 구성하는 구성 요소다. 본격적인 </p>
 </li>
-<li><p><strong>요소</strong>(Element)는 블럭 내부를 구성하는 구성 요소다. 본격적인 </p>
-</li>
-<li><p><strong>수정자</strong>(Modifiers)는 블록이나 요소의 기본 속성에 약간의 변화를 추가한다.</p>
+<li><p><strong>수정자(Modifiers)</strong>는 블록이나 요소의 기본 속성에 약간의 변화를 추가한다.</p>
 </li>
 </ul>
 <p>BEM의 기본적인 개념에 대한 내용은 그리 어렵지 않다. 공식 도큐먼트만 충분히 숙지하면 어렵지 않게 쓸 수 있다.</p>
