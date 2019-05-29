@@ -84,7 +84,7 @@ pre {
   font-size: 0.8em;
   display: inline-block;
   background-color: #f8f8f8;
-  color: #2894ff;
+  color: #ff6f61;
   padding: 3px 5px;
   margin: 0 2px 5px 0;
   border-radius: 2px;
@@ -515,7 +515,7 @@ h2.article-head {
   content: "";
   background-color: rgba(255,231,79,0.7);
   z-index: -1;
-  height: 7px;
+  height: 12px;
   width: 100%;
   bottom: -1px;
   position: absolute;
@@ -550,7 +550,7 @@ h2.article-head {
 .markdown-content p code,
 .article-summary p code {
   background-color: #f8f8f8;
-  color: #e96900;
+  color: #ff6f61;
   padding: 3px 5px;
   margin: 0 2px;
   border-radius: 2px;
@@ -622,7 +622,7 @@ h2.article-head {
 .markdown-content ol li > code,
 .article-summary ol li > code {
   background-color: #f8f8f8;
-  color: #e96900;
+  color: #ff6f61;
   padding: 3px 5px;
   margin: 0 2px;
   border-radius: 2px;
