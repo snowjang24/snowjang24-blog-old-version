@@ -505,6 +505,21 @@ h2.article-head {
   overflow-y: auto;
   overflow-x: hidden;
 }
+.markdown-content strong,
+.article-summary strong {
+  position: relative;
+  font-weight: normal;
+}
+.markdown-content strong:before,
+.article-summary strong:before {
+  content: "";
+  background-color: rgba(255,231,79,0.6);
+  z-index: -1;
+  height: 4px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
 .markdown-content pre,
 .article-summary pre,
 .markdown-content code,
