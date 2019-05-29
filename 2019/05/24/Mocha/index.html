@@ -55,7 +55,8 @@
   
 
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
 </div>
@@ -172,21 +173,36 @@
 <p><br></p>
 <h3 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h3><p>Mocha를 사용하기 위해서는 npm을 통해 설치해야 한다. 여기에 추가로 <code>test</code>라는 폴더를 만들어 안에 테스트 코드를 생성한다.</p>
 <p>테스트 코드는 모두 <code>test</code> 폴더에 넣어 둔다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install mocha -g</span><br><span class="line">mkdir <span class="built_in">test</span></span><br><span class="line">touch <span class="built_in">test</span>/test.js</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> mocha -g
+<span class="token function">mkdir</span> <span class="token function">test</span>
+<span class="token function">touch</span> test/test.js
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>이제 에디터에서 <code>test.js</code>에 다음과 같이 코드를 작성 한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line">describe(<span class="string">'Basic Mocha String Test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"> it(<span class="string">'should return number of charachters in a string'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        assert.equal(<span class="string">"Hello"</span>.length, <span class="number">4</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"> it(<span class="string">'should return first charachter of the string'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        assert.equal(<span class="string">"Hello"</span>.charAt(<span class="number">0</span>), <span class="string">'H'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Basic Mocha String Test'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return number of charachters in a string'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return first charachter of the string'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'H'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p><code>assert</code></p>
 <ul>
 <li>테스트의 상태를 결정하는 데 도움을 주며 테스트 실패를 결정</li>
 <li><p>다양한 라이브러리가 존재(ex.chai) → assertion은 한 라이브러리만 사용 가능한 것이 아니라 다양하게 사용 가능</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'chai'</span>).assert;</span><br><span class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</span><br><span class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'chai'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>assert<span class="token punctuation">;</span>
+<span class="token keyword">var</span> expect <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'chai'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>expect<span class="token punctuation">;</span>
+<span class="token keyword">var</span> should <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'chai'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
-</ul>
+<li><p><code>describe</code></p>
 <ul>
-<li><code>describe</code><ul>
 <li>테스트 컬렉션을 보유하는 함수, 두 개의 매개 변수가 필요<ol>
 <li>첫 번째 매개 변수는 테스트 중인 기능의 의미있는 이름</li>
 <li>하나 또는 여러 개의 테스트가 포함 된 함수, nested describe도 가능</li>
@@ -218,13 +234,44 @@
 <li><p>코드</p>
 <ol>
 <li><p><code>login.controller.js</code></p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LoginController</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isValidUserId</span>(<span class="params">userList, user</span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> userList.indexOf(user) &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        isValidUserId</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">module</span>.exports = LoginController();</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"> <span class="token keyword">function</span> <span class="token function">LoginController</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">function</span> <span class="token function">isValidUserId</span><span class="token punctuation">(</span>userList<span class="token punctuation">,</span> user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> userList<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">return</span> <span class="token punctuation">{</span>
+         isValidUserId
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">}</span>
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">LoginController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>/test/login.controller.spec.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">var</span> loginController =  <span class="built_in">require</span>(<span class="string">'../login.controller'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'LoginController'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  describe(<span class="string">'isValidUserId'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'should return true if valid user id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> isValid = loginController.isValidUserId([<span class="string">'abc123'</span>,<span class="string">'xyz321'</span>], <span class="string">'abc123'</span>)</span><br><span class="line">      assert.equal(isValid, <span class="literal">true</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'should return false if invalid user id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">var</span> isValid = loginController.isValidUserId([<span class="string">'abc123'</span>,<span class="string">'xyz321'</span>],<span class="string">'abc1234'</span>)</span><br><span class="line">      assert.equal(isValid, <span class="literal">false</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"> <span class="token keyword">var</span> assert <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'assert'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">var</span> loginController <span class="token operator">=</span>  <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../login.controller'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'LoginController'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+   <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'isValidUserId'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+     <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return true if valid user id'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">var</span> isValid <span class="token operator">=</span> loginController<span class="token punctuation">.</span><span class="token function">isValidUserId</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'abc123'</span><span class="token punctuation">,</span><span class="token string">'xyz321'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'abc123'</span><span class="token punctuation">)</span>
+       assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>isValid<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should return false if invalid user id'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">var</span> isValid <span class="token operator">=</span> loginController<span class="token punctuation">.</span><span class="token function">isValidUserId</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'abc123'</span><span class="token punctuation">,</span><span class="token string">'xyz321'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">'abc1234'</span><span class="token punctuation">)</span>
+       assert<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span>isValid<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>package.json</code></p>
- <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"mocha './test/*.spec.js'"</span>    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-json"><code class="language-json"> <span class="token punctuation">{</span>
+   <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"mocha './test/*.spec.js'"</span>    
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><code>package.json</code>에 명시해줘 <code>npm test</code>명령어를 통해 쉽게 테스트 가능</li>
 </ul>
@@ -232,7 +279,23 @@
 </ol>
 </li>
 </ul>
-<h4 id="비동기-테스트"><a href="#비동기-테스트" class="headerlink" title="비동기 테스트"></a>비동기 테스트</h4><pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Code */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isValidUserIdAsync</span>(<span class="params">userList, user, callback</span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      callback(userList.indexOf(user) &gt;= <span class="number">0</span>)</span><br><span class="line">    &#125;, <span class="number">1</span>);</span><br><span class="line">&#125;   </span><br><span class="line">Note: setTimeout has been used to simulate the <span class="keyword">async</span> behavior.</span><br><span class="line"><span class="comment">/* Test */</span></span><br><span class="line">it(<span class="string">'should return true if valid user id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>)</span>&#123;</span><br><span class="line">  loginController.isValidUserIdAsync([<span class="string">'abc123'</span>,<span class="string">'xyz321'</span>], <span class="string">'abc123'</span>,</span><br><span class="line">     <span class="function"><span class="keyword">function</span>(<span class="params">isValid</span>)</span>&#123;</span><br><span class="line">      assert.equal(isValid, <span class="literal">true</span>);</span><br><span class="line">      done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="비동기-테스트"><a href="#비동기-테스트" class="headerlink" title="비동기 테스트"></a>비동기 테스트</h4><pre><code>```javascript
+/* Code */
+function isValidUserIdAsync(userList, user, callback) {
+    setTimeout(function(){
+      callback(userList.indexOf(user) &gt;= 0)
+    }, 1);
+}   
+Note: setTimeout has been used to simulate the async behavior.
+/* Test */
+it(&#39;should return true if valid user id&#39;, function(done){
+  loginController.isValidUserIdAsync([&#39;abc123&#39;,&#39;xyz321&#39;], &#39;abc123&#39;,
+     function(isValid){
+      assert.equal(isValid, true);
+      done();
+  });
+});
+```
 </code></pre><p><strong>… 추후 추가 예정</strong></p>
 <p><br></p>
 <hr>
