@@ -18,7 +18,7 @@
   <meta name="keyword" content="">
    <link rel="shortcut icon" href="/css/images/logo.png"> 
   <title>
-     CSS 방법론, BEM에 대하여 | JSnow 
+     CSS 방법론, BEM에 대하여 (1) | JSnow 
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
@@ -144,7 +144,7 @@
   </div>
 </header>
  <div id="article-banner">
-  <h2>CSS 방법론, BEM에 대하여</h2>
+  <h2>CSS 방법론, BEM에 대하여 (1)</h2>
   <p class="post-date">2019-05-26</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -153,21 +153,21 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="CSS-방법론-BEM에-대하여"><a href="#CSS-방법론-BEM에-대하여" class="headerlink" title="CSS 방법론, BEM에 대하여"></a>CSS 방법론, BEM에 대하여</h1><h2 id="BEM-소개"><a href="#BEM-소개" class="headerlink" title="BEM 소개"></a>BEM 소개</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트앤드 개발 로드맵</a>을 보면 CSS 아키텍쳐로 <a href="https://en.bem.info/" rel="external nofollow noopener noreferrer" target="_blank">BEM</a>을 추천하고 있다(여기서 추천하는 기술은 많이 쓰이는 기술들이라, 전체적으로 한 번 공부해보는 것이 좋을 것 같다).</p>
+    <section class="markdown-content"><h1 id="CSS-방법론-BEM에-대하여-1"><a href="#CSS-방법론-BEM에-대하여-1" class="headerlink" title="CSS 방법론, BEM에 대하여 (1)"></a>CSS 방법론, BEM에 대하여 (1)</h1><h2 id="BEM-소개"><a href="#BEM-소개" class="headerlink" title="BEM 소개"></a>BEM 소개</h2><p><a href="https://github.com/devJang/developer-roadmap" rel="external nofollow noopener noreferrer" target="_blank">2019 프론트앤드 개발 로드맵</a>을 보면 CSS 아키텍쳐로 <a href="https://en.bem.info/" rel="external nofollow noopener noreferrer" target="_blank">BEM</a>을 추천하고 있다(여기서 추천하는 기술은 많이 쓰이는 기술들이라, 전체적으로 한 번 공부해보는 것이 좋을 것 같다).</p>
 <p><img src="image-20190526130928185-8843768.png" width="80%"></p>
 <p>2017년에는 추천하는 기술에 포함되지 않았던 BEM은 2018년에 들어 추천하는 기술에 올랐고, 2019년에는 여전히 추천하는 기술에 포함돼있지만 <a href="https://medium.com/@okys2010/모던-css-1-css-in-js-c1c53d9bbbc9" rel="external nofollow noopener noreferrer" target="_blank">CSS in JS</a>의 등장으로 금방 자리를 내어줄 것 같다.</p>
 <blockquote>
-<p>CSS in JS는 React같은 Front-End Framework에 최적화되어 있다.<br>프레임워크의 사용이 주를 이루는 요즘, 금방 BEM이 대체되지 않을까라는 생각이 들었다.<br>CSS의 변천사에 관해서는 <a href="https://medium.com/@perezpriego7/css-evolution-from-css-sass-bem-css-modules-to-styled-components-d4c1da3a659b" rel="external nofollow noopener noreferrer" target="_blank">이 글</a>을 한 번 읽어보면 좋을 것 같다.</p>
+<p>CSS in JS는 React같은 Front-End Framework에 최적화되어 있다.<br>프레임워크의 사용이 주를 이루는 요즘, 금방 BEM이 대체되지 않을까라는 생각이 들었다.<br>CSS의 변천사에 관해서는 <a href="https://medium.com/@perezpriego7/css-evolution-from-css-sass-bem-css-modules-to-styled-components-d4c1da3a659b" rel="external nofollow noopener noreferrer" target="_blank">이 글</a>을 한번 읽어보면 좋을 것 같다.</p>
 </blockquote>
 <p>하지만 위의 사진에도 적혀 있듯이 이런 방법론이 있다는 것에 의미를 두고 간단히 정리해보려 한다.</p>
 <p><br></p>
 <h3 id="빌어먹을-CSS"><a href="#빌어먹을-CSS" class="headerlink" title="빌어먹을 CSS"></a>빌어먹을 CSS</h3><p>처음 CSS로 프로젝트를 진행할 때, 가장 어려웠던 점은 <code>flex</code>도 <code>position</code>도 아닌 <code>id</code>와 <code>class</code>의 작명이었다. 프로젝트를 하다 보면 한두 개였던 요소가 어느새 한눈에 담기지 않게 되고 내가 썼던 클래스 이름을 잊기 부지기수였다.</p>
-<p>인터넷에서 어떤 규칙을 갖고 작성하는 게 좋다는 가이드라인을 찾는 것조차, 개발 공부 초짜였던 나에게는 너무나 어려운 일이었다. 그렇다고 주먹구구식으로 개발하기에는 항상 같은 문제에 부딪혔고, 조금만 규모가 커질 때마다 곤란해하다가 모든 것을 놓아버리는 방치형 개발을 주로 하였다.</p>
+<p>인터넷에서 어떤 규칙을 갖고 작성하는 게 좋다는 가이드라인을 찾는 것조차, 개발 공부 초짜였던 나에게는 너무나 어려운 일이었다. 그렇다고 주먹구구식으로 개발하기에는 항상 같은 문제에 부딪혔고, 조금만 규모가 커질 때마다 곤란해 하다가 모든 것을 놓아버리는 방치형 개발을 주로 하였다.</p>
 <p><img src="image-20190526160120034-8854080.png" width="90%"></p>
-<p>나중에 CSS 방법론에 대해 알게 되었고, 그 중 BEM을 추천한다라는 것까지 알게 되었다. 그 생각까지가 BEM에 대한 마지막 기억이다.</p>
+<p>나중에 CSS 방법론에 대해 알게 되었고, 그 중 BEM을 추천한다는 것까지 알게 되었다. 그 생각까지가 BEM에 대한 마지막 기억이다.</p>
 <p><br></p>
 <h3 id="CSS-방법론"><a href="#CSS-방법론" class="headerlink" title="CSS 방법론"></a>CSS 방법론</h3><p><strong>CSS 방법론(CSS Methodology)</strong>은 모듈화, 재사용 가능성과 확장 가능성 등을 고려하여 <strong>CSS를 잘 작성하기 위한 지침</strong>이다. 쉽게 말해, 개발자가 코드를 잘 작성하고 유지∙보수하기 쉽게 만들기 위한 CSS 작성 규칙이다. 프레임워크나 라이브러리 같은 것이 아니다.</p>
-<p>CSS 방법론에는 OOCSS, BEM SMACSS등이 있는데, 이번 포스팅에서는 그 중 가장 많이 쓰이는 BEM에 대해서만 다루려 한다.</p>
+<p>CSS 방법론에는 OOCSS, BEM SMACSS등이 있는데, 이번 포스팅에서는 그중 가장 많이 쓰이는 BEM에 대해서만 다루려 한다.</p>
 <p><br></p>
 <h3 id="BEM-이란"><a href="#BEM-이란" class="headerlink" title="BEM 이란?"></a>BEM 이란?</h3><p><strong>BEM</strong>은 <strong>Block__Element_Modifier</strong>의 약자로, 웹 UI를 블럭 단위로 컴포넌트화하여 개발하는 개발 방식이다. </p>
 <blockquote>
@@ -177,7 +177,7 @@
 <p>컴포넌트화하여 개발하면, 아래 그림과 같이 배치를 바꿔야 하는 상황에서 많은 코드 변화 없이 유동적인 배치가 가능해진다.</p>
 <p><img src="v80tUiEPgSQtyW9a7C8rxdn-5EM.png" width="80%"></p>
 <p><img src="0bbhZyhaBhRzqBh5nLYQEnFpDTk.png" width="80%"></p>
-<p>또한, 코드를 재사용하는데 있어서 큰 장점을 지니게 된다.</p>
+<p>또한, 코드를 재사용하는 데 있어 큰 장점을 가진다.</p>
 <p><img src="VBlEdksG7XkL4DLPWe4rcYb5hGo.png" width="80%"></p>
 <p>먼저, BEM은 <code>class</code>작명 규칙을 기본으로 한다. BEM에 따라 <code>class</code>를 작명할 때, 이름만 봐도 어떤 기능을 하는지 알 수 있도록 이름을 명확하게 짓는다. 작명 규칙 뿐만 아니라 파일 구조에 관한 규칙 또한 존재한다. 이러한 규칙들을 통해 개발 및 유지∙보수가 쉬운 코드를 작성하는 것을 목표로 한다.</p>
 <p>BEM의 핵심 개념은 다음과 같다.</p>
@@ -199,12 +199,12 @@
 <ul>
 <li>블럭은 환경에 영향을 주지 않는다.<ul>
 <li><code>margin</code> 같은 외부 여백을 주지 않는다.</li>
-<li>위치를 설정하면 안된다.</li>
+<li>위치를 설정하면 안 된다.</li>
 </ul>
 </li>
 <li>태그, <code>id</code> 선택자를 사용하면 안된다.</li>
 </ul>
-<p>블럭은 각 컴포넌트를 담는 <strong>그릇</strong>과 같다. 이렇게 외부에 영향을 주지 않는 규칙이 있는 이유는, <strong>재사용성</strong>과 <strong>확장성</strong>을 고려하기 때문이다. 만약 여백이나 위치와 관련된 스타일이 적용되어 있다면 해당 블럭을 다른 곳에 이식하여 사용하려 할 때, 다시 여백이나 위치를 설정해야하는 등의 귀찮은 일이 발생할 수 있다. </p>
+<p>블럭은 각 컴포넌트를 담는 <strong>그릇</strong>과 같다. 이렇게 외부에 영향을 주지 않는 규칙이 있는 이유는, <strong>재사용성</strong>과 <strong>확장성</strong>을 고려하기 때문이다. 만약 여백이나 위치와 관련된 스타일이 적용되어 있다면 해당 블럭을 다른 곳에 이식하여 사용하려 할 때, 다시 여백이나 위치를 설정해야 하는 등의 귀찮은 일이 발생할 수 있다. </p>
 <p><img src="kFetIbKxQdABHhUecbic45Il0Bg-20190528110849730.png" width="80%"></p>
 <p>추가로, 블럭을 사용할 때는 중첩해서 사용할 수 있다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- header block --></span>
@@ -285,7 +285,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-수식어-Modifier"><a href="#3-수식어-Modifier" class="headerlink" title="3. 수식어(Modifier)"></a>3. 수식어(Modifier)</h4><p><strong>수식어(Modifier)</strong>는 블럭이나 요소의 <strong>모양</strong>(ex. size_s, theme_islands), <strong>상태</strong>(ex. disabled, focused) 그리고 <strong>행동</strong>(ex. derections_left-top)을 정의한다. 기본적으로 <code>블럭이름_수식어이름</code>, <code>블럭이름__요소이름_수식어이름</code> 의 형태로 작성한다.</p>
 <blockquote>
-<p>기억하기로는, 이전에 BEM방법론에서 Modifier는 _(언더바 한 개)가 아닌 –(하이픈 두 개)를 썼던 것으로 기억 한다. 대다수의 자료들이 이를 기반으로 만들어 졌다. <del>기왕이면 바뀌기 전∙후 모두를 아는 것이 좋을 것 같다.</del> 둘 다 가능하다. 사용자 편의에 따라 규칙을 정하고 사용하면 된다.</p>
+<p>기억하기로는, 이전에 BEM방법론에서 Modifier는 _(언더바 한 개)가 아닌 –(하이픈 두 개)를 썼던 것으로 기억한다. 대다수 자료들이 이를 기반으로 만들어졌다. <del>기왕이면 바뀌기 전∙후 모두를 아는 것이 좋을 것 같다.</del> 둘 다 가능하다. 사용자 편의에 따라 규칙을 정하고 사용하면 된다.</p>
 </blockquote>
 <p><img src="WSU5nwZla7p44W2tdxiP371xx38.png" width="80%"></p>
 <p>수식어의 타입은 크게 Boolean과 Key-value로 나눌 수 있다. </p>
@@ -316,7 +316,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-form__button search-form__button_size_m<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 
-<span class="token comment" spellcheck="true">&lt;!-- 수식어 이름은 같지만 다른 값을 가진 클래스 명을 같이 써서는 안된다 --></span>
+<span class="token comment" spellcheck="true">&lt;!-- 수식어 이름은 같지만 다른 값을 가진 클래스 명을 같이 써서는 안 된다 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-form
              search-form_theme_islands
              search-form_theme_lite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -329,7 +329,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Modifier를 통해 앞의 블럭과 요소가 묘사하지 않았던 모양, 상태, 행동을 나타낼 수 있다.</p>
-<h4 id="4-혼합-Mix"><a href="#4-혼합-Mix" class="headerlink" title="4. 혼합(Mix)"></a>4. 혼합(Mix)</h4><p>이렇게 블럭과 요소를 나눠서 확실히 쓰다보면 가끔 <strong>블럭과 요소의 경계가 모호해질 때</strong>가 온다. 이 때, 블럭과 요소를 섞어서 쓸 수 있는지 의문이 드는데, 결론부터 말하면 가능하다. </p>
+<h4 id="4-혼합-Mix"><a href="#4-혼합-Mix" class="headerlink" title="4. 혼합(Mix)"></a>4. 혼합(Mix)</h4><p>이렇게 블럭과 요소를 나눠서 확실히 쓰다 보면 가끔 <strong>블럭과 요소의 경계가 모호해질 때</strong>가 온다. 이때, 블럭과 요소를 섞어서 쓸 수 있는지 의문이 드는데, 결론부터 말하면 가능하다. </p>
 <p>아래의 예시를 보면 현재 <code>header</code> 블럭 내부의 <code>search-form</code>은 자체적으로 블럭이면서 <code>heder</code> 블럭의 요소이다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- header block --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -339,7 +339,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search-form header__search-form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>이런 경우, 클래스명을 둘 다 써주어 각각의 독립적인 규칙을 지킬 수 있게 된다. 앞에서 말 했듯이 블럭에는 여백이나 위치 같은 외부 환경에 영향을 주지 않아야 한다. 하지만 여기서는 요소로도 쓰이기 때문에 불가피하게 여백이나 위치를 지정해주어야 한다. 이 때, 두 클래스명을 예시와 같이 분리해주면 규칙을 위반하지 않게 코드를 작성할 수 있다.</p>
+<p>이런 경우, 클래스명을 둘 다 써주어 각각의 독립적인 규칙을 지킬 수 있게 된다. 앞에서 말했듯이 블럭에는 여백이나 위치 같은 외부 환경에 영향을 주지 않아야 한다. 하지만 여기서는 요소로도 쓰이기 때문에 불가피하게 여백이나 위치를 지정해주어야 한다. 이때, 두 클래스명을 예시와 같이 분리해주면 규칙을 위반하지 않게 코드를 작성할 수 있다.</p>
 <h4 id="5-파일-구조-File-Structure"><a href="#5-파일-구조-File-Structure" class="headerlink" title="5. 파일 구조(File Structure)"></a>5. 파일 구조(File Structure)</h4><p>마지막으로, 이러한 작명법은 <code>class</code>명 뿐만 아니라 파일 작명에도 적용할 수 있다. 이를 통해 파일 구조를 명확하게 할 수 있다. </p>
 <pre class="line-numbers language-bash"><code class="language-bash">search-form/                           <span class="token comment" spellcheck="true"># Directory of the search-form</span>
 
@@ -367,7 +367,8 @@
     search-form.js                     <span class="token comment" spellcheck="true"># JavaScript implementation of the</span>
                                        <span class="token comment" spellcheck="true"># search-form block</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h4><p><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM의 공식 문서</a>를 읽으며 이해하는데 큰 문제가 없었으나, 뭔가 크게 와닿지 않는다. 그러면 <a href="https://m.alphasights.com/bem-i-finally-understand-b0c74815d5b0" rel="external nofollow noopener noreferrer" target="_blank">“BEM I (finally) understand”, Andrei Popa</a>라는 글을 읽어보면 모호한 개념들이 단번에 이해 된다. 정리겸 마지막 정리 예시를 한 번 가져와 보았다.</p>
+<p><br></p>
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><p><a href="https://en.bem.info/methodology/quick-start/" rel="external nofollow noopener noreferrer" target="_blank">BEM의 공식 문서</a>를 읽으며 이해하는 데 큰 문제가 없었으나, 뭔가 크게 와닿지 않는다. 그러면 <a href="https://m.alphasights.com/bem-i-finally-understand-b0c74815d5b0" rel="external nofollow noopener noreferrer" target="_blank">“BEM I (finally) understand”, Andrei Popa</a>라는 글을 읽어보면 모호한 개념들이 단번에 이해된다. 정리겸 마지막 정리 예시를 한 번 가져와 보았다.</p>
 <p><img src="1*BMQkYNpRoLyweufcIW0Rcg-20190527221604967.jpeg" width="80%"></p>
 <p>이 사진에 있는 풍경을 코드로 바꿔보면 다음과 같다. 먼저 풍경(<code>scenery</code>)을 블럭으로 만들어주고 그 내부에 구성 요소인 <code>sky</code>, <code>ground</code>, <code>people</code>을 요소로 추가한다.</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scenery<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -398,7 +399,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scenery__people<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>마지막으로 낮 시간대의 하늘에 다른 속성을 주기 위해, <code>sky</code>의 수석어로<code>daytime</code>을 추가 한다. </p>
+<p>마지막으로 낮 시간대의 하늘에 다른 속성을 주기 위해, <code>sky</code>의 수식어로<code>daytime</code>을 추가한다. </p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scenery<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scenery__sky<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sky sky_daytime<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -418,10 +419,8 @@
 <li><p><strong>수정자(Modifiers)</strong>는 블록이나 요소의 기본 속성에 약간의 변화를 추가한다.</p>
 </li>
 </ul>
-<p>BEM의 기본적인 개념에 대한 내용은 그리 어렵지 않다. 공식 도큐먼트만 충분히 숙지하면 어렵지 않게 쓸 수 있다.</p>
+<p>BEM의 기본적인 개념에 관한 내용은 그리 어렵지 않았다. 공식 도큐먼트만 충분히 숙지하면 어렵지 않게 쓸 수 있다. 좀 더 BEM을 잘 적용하기 위해, 다음 글에서는 좀 더 세부적인 규칙에 대해 정리해보려 한다.</p>
 <p><br></p>
-<h2 id="BEM으로-개발하기-추후-작성"><a href="#BEM으로-개발하기-추후-작성" class="headerlink" title="BEM으로 개발하기(추후 작성)"></a>BEM으로 개발하기(추후 작성)</h2><p>이제 BEM이 어떤 방식으로 이뤄지는지, 어떤 구성으로 쓰는지 기본적인 내용은 익힌 것 같다. </p>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h3 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h3><p><br></p>
 <hr>
 <blockquote>
 <p><strong>Reference</strong></p>
@@ -462,9 +461,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/05/27/웹컴포넌트-Web-Component-그게-뭐에요/">
+      <a class="nav-right" href="/2019/05/27/BEM-Detail/">
         
-          웹컴포넌트(Web Component), 그게 뭐에요?
+          CSS 방법론, BEM에 대하여 (2)
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -485,7 +484,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CSS-방법론-BEM에-대하여"><span class="toc-nav-text">CSS 방법론, BEM에 대하여</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-소개"><span class="toc-nav-text">BEM 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#빌어먹을-CSS"><span class="toc-nav-text">빌어먹을 CSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CSS-방법론"><span class="toc-nav-text">CSS 방법론</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-이란"><span class="toc-nav-text">BEM 이란?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-핵심-개념"><span class="toc-nav-text">BEM 핵심 개념</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-블럭-Block"><span class="toc-nav-text">1. 블럭(Block)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-요소-Element"><span class="toc-nav-text">2. 요소(Element)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-수식어-Modifier"><span class="toc-nav-text">3. 수식어(Modifier)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-혼합-Mix"><span class="toc-nav-text">4. 혼합(Mix)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-파일-구조-File-Structure"><span class="toc-nav-text">5. 파일 구조(File Structure)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#정리"><span class="toc-nav-text">정리</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM으로-개발하기-추후-작성"><span class="toc-nav-text">BEM으로 개발하기(추후 작성)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CSS"><span class="toc-nav-text">CSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#HTML"><span class="toc-nav-text">HTML</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Javascript"><span class="toc-nav-text">Javascript</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#CSS-방법론-BEM에-대하여-1"><span class="toc-nav-text">CSS 방법론, BEM에 대하여 (1)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#BEM-소개"><span class="toc-nav-text">BEM 소개</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#빌어먹을-CSS"><span class="toc-nav-text">빌어먹을 CSS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CSS-방법론"><span class="toc-nav-text">CSS 방법론</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-이란"><span class="toc-nav-text">BEM 이란?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BEM-핵심-개념"><span class="toc-nav-text">BEM 핵심 개념</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-블럭-Block"><span class="toc-nav-text">1. 블럭(Block)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-요소-Element"><span class="toc-nav-text">2. 요소(Element)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-수식어-Modifier"><span class="toc-nav-text">3. 수식어(Modifier)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-혼합-Mix"><span class="toc-nav-text">4. 혼합(Mix)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-파일-구조-File-Structure"><span class="toc-nav-text">5. 파일 구조(File Structure)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#정리"><span class="toc-nav-text">정리</span></a></li></ol></li></ol></li></ol>
     
   </div>
 </aside> 
@@ -554,7 +553,7 @@
     var gitmentConfig = "";
     if (gitmentConfig !== "undefined") {
       var gitment = new Gitment({
-        id: "CSS 방법론, BEM에 대하여",
+        id: "CSS 방법론, BEM에 대하여 (1)",
         owner: "",
         repo: "",
         oauth: {

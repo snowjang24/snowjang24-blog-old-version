@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140709405-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-140709405-1");
+  </script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="프론트 앤드 개발 기록 블로그(리액트)">
+  <meta name="keyword" content="">
+   <link rel="shortcut icon" href="/css/images/logo.png"> 
+  <title>
+     웹컴포넌트(Web Component), 그게 뭐에요? | JSnow 
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script> 
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>JSnow</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+ <div id="article-banner">
+  <h2>웹컴포넌트(Web Component), 그게 뭐에요?</h2>
+  <p class="post-date">2019-05-28</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="웹컴포넌트-Web-component-그게-뭐에요"><a href="#웹컴포넌트-Web-component-그게-뭐에요" class="headerlink" title="웹컴포넌트(Web component), 그게 뭐에요?"></a>웹컴포넌트(Web component), 그게 뭐에요?</h1><p>추후 작성 예정 . . .</p>
+<p><br></p>
+<hr>
+<blockquote>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="https://han41858.tistory.com/15" rel="external nofollow noopener noreferrer" target="_blank">왜 Web Component가 중요한가 - Tistory</a></li>
+<li><a href="https://d2.naver.com/helloworld/188655" rel="external nofollow noopener noreferrer" target="_blank">웹 컴포넌트 - naver D2</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/Web_Components" rel="external nofollow noopener noreferrer" target="_blank">웹 컴포넌트 - MDN web docs</a></li>
+<li><a href="https://meetup.toast.com/posts/113" rel="external nofollow noopener noreferrer" target="_blank">웹 컴포넌트 - TOAST Meetup</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/web-components/" rel="external nofollow noopener noreferrer" target="_blank">Building Components - Google Developers</a></li>
+</ul>
+</blockquote>
+</section>
+    <!-- Tags START -->
+    
+    <div class="tags">
+      <span>Tags:</span>
+      
+  <a href="/tags#webcomponet">
+    <span class="tag-code">webcomponet</span>
+  </a>
+
+  <a href="/tags#라이브러리">
+    <span class="tag-code">라이브러리</span>
+  </a>
+
+    </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/27/BEM-Detail/">
+        <span class="nav-arrow">← </span>
+        
+          CSS 방법론, BEM에 대하여 (2)
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/28/웹컴포넌트-Web-Component-그게-뭐에요/">
+        
+          웹컴포넌트(Web Component), 그게 뭐에요?
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+
+    
+    <!-- Disqus START -->
+    <div id="disqus_thread"></div>
+    <!-- Disqus END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+   <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#웹컴포넌트-Web-component-그게-뭐에요"><span class="toc-nav-text">웹컴포넌트(Web component), 그게 뭐에요?</span></a></li></ol>
+    
+  </div>
+</aside> 
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function() {
+    var url = "http://snowjang24.github.io/2019/05/28/웹컴포넌트-Web-Component-그게-뭐에요/";
+    // var banner = "";
+    // if (banner !== "" && banner !== "undefined" && banner !== "null") {
+    //   $("#article-banner").css({
+    //     "background-image": "url(" + banner + ")"
+    //   });
+    // } else {
+    //   $("#article-banner").geopattern(url);
+    // }
+    $(".header").removeClass("fixed-header");
+
+    // error image
+    $(".markdown-content img").on("error", function() {
+      $(this).attr("src", "http://file.muyutech.com/error-img.png");
+      $(this).css({
+        cursor: "default"
+      });
+    });
+
+    // zoom image
+    $(".markdown-content img").on("click", function() {
+      var src = $(this).attr("src");
+      if (src !== "http://file.muyutech.com/error-img.png") {
+        var imageW = $(this).width();
+        var imageH = $(this).height();
+
+        var zoom = (($(window).width() * 0.95) / imageW).toFixed(2);
+        zoom = zoom < 1 ? 1 : zoom;
+        zoom = zoom > 2 ? 2 : zoom;
+        var transY = (($(window).height() - imageH) / 2).toFixed(2);
+
+        $("body").append(
+          '<div class="image-view-wrap"><div class="image-view-inner"><img src="' +
+            src +
+            '" /></div></div>'
+        );
+        $(".image-view-wrap").addClass("wrap-active");
+        $(".image-view-wrap img").css({
+          width: `${imageW}`,
+          transform: `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        });
+        $("html").css("overflow", "hidden");
+
+        $(".image-view-wrap").on("click", function() {
+          $(this).remove();
+          $("html").attr("style", "");
+        });
+      }
+    });
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById("share-qrcode"),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "";
+    if (gitmentConfig !== "undefined") {
+      var gitment = new Gitment({
+        id: "웹컴포넌트(Web Component), 그게 뭐에요?",
+        owner: "",
+        repo: "",
+        oauth: {
+          client_id: "",
+          client_secret: ""
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement("div");
+            container.lang = "en-US";
+            container.className = "gitment-container gitment-root-container";
+            container.appendChild(instance.renderHeader(state, instance));
+            container.appendChild(instance.renderEditor(state, instance));
+            container.appendChild(instance.renderComments(state, instance));
+            container.appendChild(instance.renderFooter(state, instance));
+            return container;
+          }
+        }
+      });
+      gitment.render(document.getElementById("comments"));
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = 'jsnows';
+  
+  var disqus_url = 'http://snowjang24.github.io/2019/05/28/웹컴포넌트-Web-Component-그게-뭐에요/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+ <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng" rel="external nofollow noopener noreferrer" target="_blank">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
