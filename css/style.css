@@ -597,6 +597,11 @@ h2.article-head {
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
 }
+.markdown-content blockquote strong,
+.article-summary blockquote strong {
+  font-weight: bold;
+  background: none;
+}
 .markdown-content ul,
 .article-summary ul,
 .markdown-content ol,
